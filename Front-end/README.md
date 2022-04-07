@@ -1,1 +1,0 @@
-# TechnicalShare-Squad13
