@@ -3,18 +3,22 @@
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
+
+
 module.exports = {
 
   development: {
     client: 'sqlite3',
     connection: {
-      filename: './src/database/db.sqlite3'
+      filename: './database/db.sqlite3'
     },
     migrations: {
       directory: './database/migrations'
     },
     useNullAsDefault: true
   },
+
+  
 
   staging: {
     client: 'postgresql',
