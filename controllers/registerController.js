@@ -3,7 +3,7 @@ module.exports = {
     async register (request, response) {
         const {name,lastname,email, password, birthdate, specialization, hastags} = request.body
 
-        await connection('user').insert({name})
+        await connection('user').insert({name,lastname,email,password,birthdate, specialization, hastags}) 
 
         return response.json("estou na rota do registro"); 
     } 
