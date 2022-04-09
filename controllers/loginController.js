@@ -8,7 +8,7 @@ const connection = require('../database/conection')
      const user = await connection('user')
       .where('email', email)
       .where('password', password)
-      .select("userId","email","name","lastname")
+      .select("userId","email","name")
       .first()
   
 
