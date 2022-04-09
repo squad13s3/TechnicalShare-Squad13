@@ -3,10 +3,12 @@
 ## 📄Atividades a serem desenvolvidas:
 
 - [ ] Codar o layout estrutural das páginas
-  - [ ] Home
+  - [x] Home
   - [ ] Perfil
   - [ ] Chat
   - [ ] Agendamento
+  - [ ] Login
+  - [ ] Cadastro
 - [ ] Integrar o sistema de chat
 - [ ] Integrar o sistema de agendamento
 - [ ] Desenvolver a criação de perfil do usuário

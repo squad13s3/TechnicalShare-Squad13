@@ -21,11 +21,19 @@
   color: #9c9c9d;
 }
 
+.icon:hover {
+  color: orangered;
+}
+
 .iconText {
   display: inline;
   padding-left: 10px;
   color: #535353;
   font-weight: 400;
+}
+
+.iconText:hover {
+  font-weight: bold;
 }
 
 .box {
