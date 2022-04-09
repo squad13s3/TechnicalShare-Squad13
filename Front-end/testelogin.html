@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TechnicalShare</title>
     <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
@@ -31,12 +31,20 @@
         >
           Esqueceu sua senha?<a href="#"> Clique Aqui</a>
         </div>
-        <button type="submit" class="btn btn-primary">Entrar</button>
+        <button type="submit" class="btn btn-primary" onclick="Login()">
+          Entrar
+        </button>
       </form>
     </div>
 
     <!--Perfil-->
 
     <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script>
+      function Login() {
+        var login = document.getElementById("loginEmail").value;
+        var senha = document.getElementById("loginSenha").value;
+      }
+    </script>
   </body>
 </html>
