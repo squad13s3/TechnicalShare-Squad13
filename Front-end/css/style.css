@@ -13,10 +13,6 @@
   margin-top: 8px;
 }
 
-#logoResponsive {
-  display: none;
-}
-
 .icon {
   color: #9c9c9d;
 }
@@ -38,14 +34,31 @@
 
 .box {
   background-color: #f9f9f9;
+  max-width: 964px;
+  height: 933px;
 }
 .line {
   border: 1px solid #f9f9f9;
   width: 220px;
   margin-bottom: 15px;
 }
+
 .radius {
   border-radius: 25px;
+}
+
+.searchButton:hover {
+  background-color: #7373b5;
+  width: 166px;
+}
+
+.searchButton {
+  background-color: white;
+  border: none;
+}
+
+.iconSearch {
+  color: black;
 }
 
 .carousel .carousel-indicators button {
@@ -66,14 +79,6 @@
 /* Responsividade */
 
 @media screen and (max-width: 1200px) {
-  #logo {
-    display: none;
-  }
-
-  #logoResponsive {
-    display: block;
-  }
-
   .iconText {
     display: none;
   }
