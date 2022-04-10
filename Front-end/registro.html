@@ -27,20 +27,27 @@
       <form action="">
         <div class="w-50 mx-auto radius pt-5">
           <label for="nomeCompleto" class="form-label">Como você se chama?</label>
-          <input type="email" class="mx-auto form-control" id="loginEmail"  placeholder="Nome e Sobrenome"/>
+          <input type="email" class="mx-auto form-control" id="loginEmail"  placeholder="Nome e Sobrenome" required/>
         </div>
         <div class="w-50 mx-auto pt-2">
           <label for="loginEmail" class="form-label">Qual seu email?</label>
-          <input type="password" class="form-control" id="loginSenha" placeholder="example@email.com"/>
+          <input type="password" class="form-control" id="loginSenha" placeholder="example@email.com" required/>
         </div>
         <div class="w-50 mx-auto pt-2">
           <label for="loginSenha" class="form-label"  >Defina uma senha de acesso:</label>
-          <input type="password" class="form-control" id="loginSenha" placeholder="*************"/>
+          <input type="password" class="form-control" id="loginSenha" placeholder="*************" required/>
+        </div>
+        <br>
+        <div class="form-check w-50 mx-auto text-center">
+          <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault" required>
+          <label class="form-check-label text-center" for="flexCheckDefault">
+            Ao fazer o Registro, você concorda com os nossos termos e condições de serviço e a nossa politica de privacidade(LGPD).
+          </label>
         </div>
         <br>
         <div class="col-md-12 text-center">
         <button type="submit" class="btn btn-primary w-50 radius" style="background-color: #7373B5" onclick="Login()">
-          Entrar
+          Registrar
         </button>
         </div>
         <br>
