@@ -6,9 +6,9 @@
   - [x] Home
   - [ ] Perfil
   - [ ] Chat
-  - [ ] Agendamento
-  - [ ] Login
-  - [ ] Cadastro
+  - [x] Agendamento
+  - [x] Login
+  - [x] Cadastro
 - [ ] Integrar o sistema de chat
 - [ ] Integrar o sistema de agendamento
 - [ ] Desenvolver a criação de perfil do usuário

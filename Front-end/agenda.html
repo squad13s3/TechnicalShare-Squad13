@@ -63,22 +63,32 @@
             <a href="#" class="py-2 text-decoration-none"
               ><h5 class="iconText pe-5">Conversas</h5></a
             >
+            <br>
             <div>
               <a href="#" class="text-decoration-none"
-                ><img class="py-3" src="assets/images/imgTeste.jpg" alt="" />
-                <p class="iconText">Charles H.</p></a
-              >
+                ><img src="assets/images/charlesSm.jpg" alt="" />
+                <p class="iconText">Charles H.</p>
             </div>
             <div class="line"></div>
             <a href="#" class="text-decoration-none"
-              ><img src="assets/images/imgTeste.jpg" alt="" />
-              <p class="iconText">Charles H.</p></a
+              ><img src="assets/images/alineV.jpg" alt="" />
+              <p class="iconText">Aline V.</p></a
+            >
+            <div class="line"></div>
+            <a href="#" class="text-decoration-none"
+              ><img src="assets/images/neymarJ.jpg" alt="" />
+              <p class="iconText">Neymar Jr.</p></a
             >
           </div>
-          <div class="col bg-white d-flex flex-column my-2 p-2">
+          <div class="col d-flex flex-column align-self-end my-2 p-2">
             <a href="#" class="text-decoration-none"
-              ><img class="py-3" src="assets/images/imgTeste.jpg" alt="" />
-              <p class="iconText">Você mesmo</p></a
+              ><span
+                class="iconify"
+                data-icon="bi:person-circle"
+                style="color: #9c9c9d; height: 300px;"
+                data-width="37"
+              ></span>
+              <p class="iconText">Seu perfil</p></a
             >
           </div>
         </div>
@@ -95,7 +105,7 @@
             </div>
           </div>
           <div
-            class="row align-items-center bg-warning px-5 mx-5 radius"
+            class="row align-items-center bg-white px-5 mx-5 radius"
             style="height: 413px"
           >
             <div class="col-md mx-5">
@@ -104,13 +114,15 @@
               <p style="font-weight: 500">Vamos Conversar</p>
             </div>
             <div class="col-md">
-              <form method="post" style="width: 80%">
+              <!--<form method="post" style="width: 80%"><!-->
+              <div style="width: 80%">
                 <div class="form">
-                  <label class="control-label" for="date"
-                    >Data da Mentoria</label
+                  <label for="Date" class="control-label mx-2" for="date"
+                    >Escolha uma data:</label
                   >
                   <input
-                    class="form-control"
+                    onclick="onSelectedDate()"
+                    class="form-control radius meetSelected"
                     id="datepicker"
                     name="date"
                     placeholder="DD/MM/YYYY"
@@ -119,9 +131,15 @@
                     required
                   />
                 </div>
-                <div class="form">
-                  <label for="exampleFormControlSelect1">Selecionar Hora</label>
-                  <select class="form-control" id="exampleFormControlSelect1">
+                <div class="form my-3">
+                  <label for="Time" class="mx-2">Escolha um horário:</label>
+                  <select
+                    onclick="onSelectedTime()"
+                    class="form-control radius meetSelected"
+                    id="selectTime"
+                    required
+                    disabled
+                  >
                     <option>09:00</option>
                     <option>10:00</option>
                     <option>11:00</option>
@@ -134,11 +152,18 @@
                   </select>
                 </div>
                 <div class="form">
-                  <button class="btn btn-primary" name="submit" type="submit">
-                    Submit
+                  <button
+                    onclick="onRequestMeetingClick()"
+                    class="btn mentorMeet radius"
+                    id="requestMeeting"
+                    type="submit"
+                    disabled
+                  >
+                    Solicitar
                   </button>
                 </div>
-              </form>
+              </div>
+              <!--</form><!-->
             </div>
           </div>
         </aside>
@@ -146,9 +171,5 @@
     </div>
   </body>
   <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
-  <script>
-    $(function () {
-      $("#datepicker").datepicker();
-    });
-  </script>
+  <script type="text/javascript" src="js/script.js"></script>
 </html>

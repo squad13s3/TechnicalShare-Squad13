@@ -76,6 +76,28 @@
   font-size: 16px;
 }
 
+.form .mentorMeet {
+  background-color: #b3b3b3;
+  width: 50%;
+  color: white;
+}
+
+.meetSelected {
+  border-color: #b3b3b3;
+}
+
+.colorChangeInput {
+  border-color: #7373b5;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.colorChangeButton {
+  background-color: #7373b5;
+  width: 50%;
+  color: white;
+}
+
 /* Responsividade */
 
 @media screen and (max-width: 1200px) {
