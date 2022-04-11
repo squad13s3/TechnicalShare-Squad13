@@ -7,6 +7,10 @@
   font-family: "Space Grotesk", sans-serif;
 }
 
+.titulo {
+  font-size: 64px;
+}
+
 #logo {
   font: normal 32px "Space Grotesc", sans-serif;
   cursor: pointer;

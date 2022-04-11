@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechnicalShare</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <nav></nav>
+
+    <div class="container-fluid mb-4 mt-4">
+      <div class="row mt-4">
+        <!--Menu-->
+        <div class="col">
+          <div class="col bg-white my-3">
+            <h2><span style="font-weight: bold">T</span>echnical<span style="font-weight: bold">Share</span></h2>
+          </div>
+    </div>
+    <br>
+    <!--Login-->
+    <h1 class="mb-3 text-center pt-5"><span style="font-weight: bold"> Que bom te conhecer!</span></h1>
+    <div class="container">
+      <form action="">
+        <div class="w-50 mx-auto radius pt-5">
+          <label for="nomeCompleto" class="form-label">Como você se chama?</label>
+          <input type="email" class="mx-auto form-control" id="loginEmail"  placeholder="Nome e Sobrenome" required/>
+        </div>
+        <div class="w-50 mx-auto pt-2">
+          <label for="loginEmail" class="form-label">Qual seu email?</label>
+          <input type="password" class="form-control" id="loginSenha" placeholder="example@email.com" required/>
+        </div>
+        <div class="w-50 mx-auto pt-2">
+          <label for="loginSenha" class="form-label"  >Defina uma senha de acesso:</label>
+          <input type="password" class="form-control" id="loginSenha" placeholder="*************" required/>
+        </div>
+        <br>
+        <div class="form-check w-50 mx-auto text-center">
+          <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault" required>
+          <label class="form-check-label text-center" for="flexCheckDefault">
+            Ao fazer o Registro, você concorda com os nossos termos e condições de serviço e a nossa politica de privacidade(LGPD).
+          </label>
+        </div>
+        <br>
+        <div class="col-md-12 text-center">
+        <button type="submit" class="btn btn-primary w-50 radius" style="background-color: #7373B5" onclick="Login()">
+          Registrar
+        </button>
+        </div>
+        <br>
+        <div
+        id="recuperarSenha"
+        class="form-text mb-3 pt-5"
+        aria-describedby="recuperarSenha"
+        style="text-align: center"
+        >
+          Ja tem uma conta?<a href="login.html"> Entrar</a>
+        </div>
+      </form>
+    </div>
+
+    <!--Perfil-->
+
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script>
+      function Login() {
+        var login = document.getElementById("loginEmail").value;
+        var senha = document.getElementById("loginSenha").value;
+      }
+    </script>
+  </body>
+</html>
