@@ -15,4 +15,9 @@ const { addMessage, getMessages } = require("../controllers/messageController");
 routes.post("/addmsg/", addMessage);
 routes.post("/getmsg/", getMessages);
 
+const teachTagcontroller = require("../controllers/teachTagController");
+routes.post("/teachtag/:id", teachTagcontroller.create)
+
+const learnTagController = require("../controllers/learnTagController");
+routes.post("/learntag/:id", learnTagController.create)
 module.exports = routes;
