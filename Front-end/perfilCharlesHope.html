@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechnicalShare</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.11.3.min.js"
+    ></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  </head>
+
+  <body>
+    <div class="container-fluid mb-4 mt-4">
+      <div class="row mt-4">
+        <!--Menu-->
+        <div class="col-3 my-2 mx-3 px-5 bg-white justify-content-start">
+          <div class="col bg-white my-3">
+            <h2>T<span style="font-weight: bold">S</span></h2>
+          </div>
+          <nav
+            class="col d-flex flex-column bg-white my-2 p-2"
+            style="height: 200px"
+          >
+            <a href="index.html" class="py-2 text-decoration-none"
+              ><span
+                class="iconify icon"
+                data-icon="akar-icons:home"
+                data-width="24"
+              ></span>
+              <h5 class="iconText">Início</h5></a
+            >
+            <a href="meuPerfil.html" class="py-2 text-decoration-none"
+              ><span
+                class="iconify icon"
+                data-icon="bi:person-circle"
+                data-width="24"
+              ></span>
+              <h5 class="iconText">Perfil</h5></a
+            >
+            <a href="#" class="py-2 text-decoration-none"
+              ><span
+                class="iconify icon"
+                data-icon="bx:calendar"
+                data-width="23"
+              ></span>
+              <h5 class="iconText">Agenda</h5></a
+            >
+          </nav>
+          <div
+            class="col bg-white d-flex flex-column my-2 p-2"
+            style="height: 300px"
+          >
+            <a href="#" class="py-2 text-decoration-none"
+              ><h5 class="iconText pe-5">Conversas</h5></a
+            >
+            <br />
+            <div>
+              <a href="#" class="text-decoration-none"
+                ><img src="assets/images/charlesSm.jpg" alt="" />
+                <p class="iconText">Charles H.</p>
+            </div>
+            <div class="line"></div>
+            <a href="#" class="text-decoration-none"
+              ><img src="assets/images/alineV.jpg" alt="" />
+              <p class="iconText">Aline V.</p></a
+            >
+            <div class="line"></div>
+            <a href="#" class="text-decoration-none"
+              ><img src="assets/images/neymarJ.jpg" alt="" />
+              <p class="iconText">Neymar Jr.</p></a
+            >
+          </div>
+        </div>
+
+        <aside class="col radius me-4 box" style="height: 1000px">
+          <div class="row bg-white m-4 radius" style="height: 197px">
+            <div class="col-md-6 d-flex justify-content-start align-self-end">
+              <img src="assets/images/CharlesMd.png" class="" />
+            </div>
+            <div class="col-md-3 d-flex justify-content-end align-self-end">
+              <button
+                class="btn radius btn-outline-dark editProfileButton mb-2"
+                id=""
+                type="button"
+              >
+                conversar
+              </button>
+            </div>
+            <div class="col-md-3 d-flex justify-content-end align-self-end">
+              <button
+                onclick="onRequestMeetingClick()"
+                class="btn radius btn-outline-dark editProfileButton mb-2"
+                id=""
+                type="button"
+              >
+                Solicitar mentoria
+              </button>
+            </div>
+          </div>
+          <div class="d-flex flex-row-reverse bd-highlight m-3">
+            <div class="p-2 bd-highlight">
+              <a href="#">
+                <span
+                class="iconify"
+                data-icon="ant-design:linkedin-outlined"
+                style="color: #212529"
+                data-width="32"
+              ></span>
+              </a>
+            </div>
+            <div class="p-2 bd-highlight">
+              <a href="#">
+                <span
+                class="iconify"
+                data-icon="bxl:instagram"
+                style="color: #212529"
+                data-width="35"
+              ></span>
+              </a>
+            </div>
+            <div class="p-2 bd-highlight">
+              <a href="#">
+                <span
+                class="iconify mt-1"
+                data-icon="bi:medium"
+                style="color: #212529"
+                data-width="24"
+              ></span>
+              </a>
+            </div>
+          </div>
+          <div class="mx-5">
+            <h1 class="fw-bold" style="color: #212529">Charles Hope</h1>
+            <p class="profileText" style="font-weight: 500">
+              UX Researcher
+              <span class="iconify" data-icon="bi:dot" data-width="15"></span>
+              Senior
+            </p>
+            <h6 class="profileText fw-bold mt-5 mb-3">Sobre</h6>
+            <p class="profileText">
+              Formado em Ciências Sociais, e MBA em Design de Interação para
+              Artefatos Digitais. É especialista em pesquisa para criação e
+              desenvolvimento de produtos digitais. Atua como UX Researcher
+              Senior - Parte do Grupo FCamara desde 2016
+            </p>
+          </div>
+          <div class="bg-white mx-5 my-5 py-3 radius">
+            <div class="row mx-5 my-2 fw-bold">
+              <h4 class="fw-bold">O que ensina:</h4>
+            </div>
+            <div class="row mx-5 my-2">
+              <div class="col-md-4 mb-2">
+                <div class="bg-white tagsTeach">ux research</div>
+              </div>
+              <div class="col-md-4">
+                <div class="bg-white tagsTeach">entrevistas</div>
+              </div>
+              <div class="col-md-4">
+                <div class="bg-white tagsTeach">jornada do usuário</div>
+              </div>
+            </div>
+            <div class="row mx-5 my-3">
+              <h4 class="fw-bold">O que gostaria de aprender:</h4>
+            </div>
+            <div class="row mx-5 my-2">
+              <div class="col-md-4 mb-2">
+                <div class="bg-white tagsLearn">card sorting</div>
+              </div>
+              <div class="col-md-4">
+                <div class="bg-white tagsLearn">tree-testing</div>
+              </div>
+              <div class="col-md-4">
+                <div class="bg-white tagsLearn">customer experience</div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+</html>

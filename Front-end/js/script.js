@@ -42,9 +42,15 @@ function onSelectedTime(event) {
   render();
 }
 
-function onRequestMeetingClick() {
-  window.location.href = "../agendaSucess.html";
+function onScheduleMeetingClick() {
+  window.location.href = "../mentoriaAgendada.html";
 }
+
+function onRequestMeetingClick() {
+  window.location.href = "../solicitarMentoria.html";
+}
+
+function startSearchButton() {}
 
 //testes
 //var data = $("#datepicker").val();
