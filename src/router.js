@@ -20,4 +20,7 @@ routes.post("/teachtag/:id", teachTagcontroller.create)
 
 const learnTagController = require("../controllers/learnTagController");
 routes.post("/learntag/:id", learnTagController.create)
+
+const scheduleMentorship = require("../controllers/ScheduleMentorshipController");
+routes.post("/scheduleMentorship/:userId_teacher/:userId_student",scheduleMentorship.create)
 module.exports = routes;
