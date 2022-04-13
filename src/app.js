@@ -6,7 +6,7 @@ const routes = require('../src/router');
 cors = require('cors');
 const mongoose = require("mongoose");
 require("dotenv").config();
-const socket = require("socket.io");
+//const socket = require("socket.io");
 
 const app = express();
 
@@ -26,8 +26,8 @@ app.use(cors());
 app.use(express.json())
 app.use(routes);
 
-const server = app.listen(process.env.PORT || 3333)
-
+ app.listen(process.env.PORT || 3333)
+/*
 
 const io = socket(server, {
     cors: {
@@ -50,4 +50,4 @@ const io = socket(server, {
       }
     });
   });
-  
+  */
