@@ -3,7 +3,7 @@ const crypto = require('crypto');
 
 const mailer = require('nodemailer')
 const smtpConfiguration = require('../config/smtp');
-const { send } = require('express/lib/response');
+
 
 const smtpTransport = mailer.createTransport({
     host: smtpConfiguration.host,
@@ -32,6 +32,7 @@ module.exports = {
         const {name,email, password} = request.body
         const userId = crypto.randomUUID()
         await connection('user').insert({userId, name,email,password}) 
+        
         sendEmail(email)
 
         return response.json({message: 'Usuário cadastrado.' }); 
