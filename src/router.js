@@ -25,5 +25,5 @@ const scheduleMentorship = require("../controllers/ScheduleMentorshipController"
 routes.post("/scheduleMentorship/:userId_teacher/:userId_student",scheduleMentorship.create)
 
 const HastagController = require("../controllers/HastagController");
-routes.get("/hastagcontroller/", HastagController.search)
+routes.get("/search", HastagController.search)
 module.exports = routes;
