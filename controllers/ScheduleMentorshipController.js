@@ -34,12 +34,12 @@ async function sendEmail(email){
     
         const userId_student= request.params.userId_student
         const userId_teacher= request.params.userId_teacher
-        const scheduleMentorship = request.body;
+        const {scheduleMentorship} = request.body;
         
-
+        console.log(scheduleMentorship)
         await connection('scheduleMentorship').insert({userId_student,userId_teacher,scheduleMentorship}) 
         const email = "wolgranjulio@gmail.com" 
-        sendEmail(email)
+        //sendEmail(email)
         return response.json({message: 'Mentoria Cadastarda!' }); 
     }
  

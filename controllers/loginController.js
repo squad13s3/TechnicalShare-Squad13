@@ -10,7 +10,9 @@ const connection = require('../database/conection')
       .where('password', password)
       .select("userId","email","name")
       .first()
-  
+      if (!user) {
+        return response.status(400).json({ message: 'Falha ao efetuar Login, cheque suas informaçoes' });
+      }
 
       return response.json(user);
  
