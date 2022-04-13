@@ -9,7 +9,7 @@ require("dotenv").config();
 //const socket = require("socket.io");
 
 const app = express();
-
+/*
 mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
@@ -21,7 +21,7 @@ mongoose
   .catch((err) => {
     console.log(err.message);
   });
-
+*/
 app.use(cors());
 app.use(express.json())
 app.use(routes);

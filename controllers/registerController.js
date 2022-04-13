@@ -32,7 +32,7 @@ module.exports = {
         const {name,email, password} = request.body
         const userId = crypto.randomUUID()
         await connection('user').insert({userId, name,email,password}) 
-        sendEmail(email)
+//sendEmail(email)
 
         return response.json({message: 'Usuário cadastrado.' }); 
     } 
