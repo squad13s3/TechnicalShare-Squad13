@@ -7,6 +7,8 @@
     <title>TechnicalShare</title>
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.js"></script>
   </head>
 
   <body>
@@ -24,18 +26,18 @@
     <!--Login-->
     <h1 class="mb-3 text-center pt-5"><span style="font-weight: bold"> Que bom te conhecer!</span></h1>
     <div class="container">
-      <form action="">
+      <form action="" id="registro">
         <div class="w-50 mx-auto radius pt-5">
           <label for="nomeCompleto" class="form-label">Como você se chama?</label>
-          <input type="email" class="mx-auto form-control" id="loginEmail"  placeholder="Nome e Sobrenome" required/>
+          <input type="Nome" class="mx-auto form-control" name="nome" id="loginNome"  placeholder="Nome e Sobrenome" required/>
         </div>
         <div class="w-50 mx-auto pt-2">
           <label for="loginEmail" class="form-label">Qual seu email?</label>
-          <input type="password" class="form-control" id="loginSenha" placeholder="example@email.com" required/>
+          <input type="email" class="form-control" name="email" id="loginEmail" placeholder="example@email.com" required/>
         </div>
         <div class="w-50 mx-auto pt-2">
           <label for="loginSenha" class="form-label"  >Defina uma senha de acesso:</label>
-          <input type="password" class="form-control" id="loginSenha" placeholder="*************" required/>
+          <input type="password" class="form-control" name="senha" id="loginSenha" placeholder="*************" required/>
         </div>
         <br>
         <div class="form-check w-50 mx-auto text-center">
@@ -46,7 +48,7 @@
         </div>
         <br>
         <div class="col-md-12 text-center">
-        <button type="submit" class="btn btn-primary w-50 radius" style="background-color: #7373B5" onclick="Login()">
+        <button type="submit" class="btn btn-primary w-50 radius" style="background-color: #7373B5">
           Registrar
         </button>
         </div>
@@ -65,11 +67,29 @@
     <!--Perfil-->
 
     <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script>
-      function Login() {
-        var login = document.getElementById("loginEmail").value;
-        var senha = document.getElementById("loginSenha").value;
+    <script type="text/javascript">
+    const sendGetRequest = async (data) => {
+        await axios.post('https://technicalshare.herokuapp.com/register', data)
+        .then(response => localStorage.setItem("nomeUsuario", response.data.name),
+        );
+        location.href='index.html';
       }
+    
+      $('#registro').submit(function (event) {
+        event.preventDefault();
+        
+        var nome = $('input[name=nome]').val();
+        var email = $('input[name=email]').val();
+        var senha = $('input[name=senha]').val();
+
+        console.log(`nome: ${nome}`); 
+        console.log(`email: ${email}`);
+        console.log(`senha: ${senha}`);
+
+        const data = {"nome":`${nome}`, "email":`${email}`,"password":`${senha}`};
+        
+        sendGetRequest(data);
+      })
     </script>
   </body>
 </html>

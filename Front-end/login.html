@@ -7,6 +7,8 @@
     <title>TechnicalShare</title>
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.js"></script>
   </head>
 
   <body>
@@ -24,18 +26,18 @@
     <!--Login-->
     <h1 class="mb-3 text-center pt-5"><span style="font-weight: bold"> Vamos crescer juntos.</span></h1>
     <div class="container">
-      <form action="">
+      <form action="" id="login">
         <div class="w-50 mx-auto radius pt-5">
           <label for="loginEmail" class="form-label">Email</label>
-          <input type="email" class="mx-auto form-control" id="loginEmail" placeholder="Digite seu Email" required/>
+          <input type="email" class="mx-auto form-control" name="email" id="loginEmail" placeholder="Digite seu Email" required/>
         </div>
         <div class="w-50 mx-auto pt-2">
           <label for="loginSenha" class="form-label" >Senha</label>
-          <input type="password" class="form-control" id="loginSenha" placeholder="Digite sua Senha" required/>
+          <input type="password" class="form-control" name="senha" id="loginSenha" placeholder="Digite sua Senha" required/>
         </div>
         <br>
         <div class="col-md-12 text-center pt-2">
-        <button type="submit" class="btn btn-primary w-50 radius" style="background-color: #7373B5" onclick="Login()">
+        <button type="submit" class="btn btn-primary w-50 radius" style="background-color: #7373B5">
           Entrar
         </button>
         </div>
@@ -55,10 +57,25 @@
 
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script>
-      function Login() {
-        var login = document.getElementById("loginEmail").value;
-        var senha = document.getElementById("loginSenha").value;
+      const sendGetRequest = async (data) => {
+        await axios.post('https://technicalshare.herokuapp.com/login', data)
+        .then(response => localStorage.setItem("nomeUsuario", response.data.name),
+        );
+        location.href='index.html';
       }
+
+        $('#login').submit(function (event) {
+        event.preventDefault();
+        
+        var email = $('input[name=email]').val();
+        var senha = $('input[name=senha]').val();
+
+        console.log(`email: ${email}`);
+        console.log(`senha: ${senha}`);
+
+        const data = { "email":`${email}`,"password":`${senha}`};
+        sendGetRequest(data);
+      })
     </script>
   </body>
 </html>

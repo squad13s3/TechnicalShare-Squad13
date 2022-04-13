@@ -108,8 +108,8 @@
                 <span class="iconify mt-1" data-icon="bi:medium" style="color: #212529;" data-width="24"></span>
             </div>
           </div>
-          <div class="mx-5">
-             <h1 class="fw-bold" style="color: #212529;">Você Mesmo</h1>
+          <div class="mx-5" id="perfil">
+             <h1 class="fw-bold" id="nome" style="color: #212529;">Você Mesmo</h1>
              <p class="profileText" style="font-weight: 500;">Product Designer <span class="iconify" data-icon="bi:dot"  data-width="15"></span> Trainee</p>
              <h6 class="profileText fw-bold mt-5 mb-3" >Sobre</h6>
              <p class="profileText">Formado em Design Digital, e pós graduando em UX Research, Operações de Pesquisa e Liderança em Design. Atua como Product Designer trainee - Parte do Grupo FCamara desde 2022.
@@ -152,4 +152,8 @@
   </body>
   <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
+  <script type="text/javascript">
+    document.getElementById("nome").innerHTML = localStorage.getItem("nomeUsuario");
+  
+  </script>
 </html>

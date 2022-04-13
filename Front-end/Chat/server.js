@@ -11,7 +11,7 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
 app.use('/', (req, res) => {
-    res.render('index.html');
+    res.render('chat.html');
 })
 
 let messages = [];
@@ -28,4 +28,4 @@ io.on('connection', socket => {
     });
 });
 
-server.listen(3000);
+server.listen(5500);
