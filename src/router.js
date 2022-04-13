@@ -18,7 +18,7 @@ routes.post("/getmsg/", getMessages);
 const teachTagcontroller = require("../controllers/teachTagController");
 routes.post("/teachtag/:id", teachTagcontroller.create)
 
-const learnTagController = require("../controllers/learnTagController");
+const learnTagController = require("../controllers/LearnTagController");
 routes.post("/learntag/:id", learnTagController.create)
 
 const scheduleMentorship = require("../controllers/ScheduleMentorshipController");
