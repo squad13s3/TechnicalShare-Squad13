@@ -23,4 +23,7 @@ routes.post("/learntag/:id", learnTagController.create)
 
 const scheduleMentorship = require("../controllers/ScheduleMentorshipController");
 routes.post("/scheduleMentorship/:userId_teacher/:userId_student",scheduleMentorship.create)
+
+const HastagController = require("../controllers/HastagController");
+routes.get("/HastagController/", HastagController.search)
 module.exports = routes;
