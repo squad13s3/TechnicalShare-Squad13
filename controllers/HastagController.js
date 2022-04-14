@@ -11,7 +11,7 @@ const connection = require('../database/conection')
         const searchresult = await connection('teach')
         .where("tag_teach1",tag_search).orWhere("tag_teach2",tag_search).orWhere("tag_teach3",tag_search)
         .join('user', 'teach.userId_fk','=', 'user.userId')
-        .select('teach.tag_teach1','teach.tag_teach2','teach.tag_teach3','user.userId','user.name');
+        .select('teach.tag_teach1','teach.tag_teach2','teach.tag_teach3','user.userId','user.name','user.imgUrl');
        
         
         return response.json(searchresult); 
