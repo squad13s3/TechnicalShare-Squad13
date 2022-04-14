@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechnicalShare</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.11.3.min.js"
+    ></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  </head>
+
+  <!--Quando a página carrega serão pegos dados do servidor-->
+  <body onload="getProfileData()"> 
+    <div class="container-fluid mb-4 mt-4">
+      <div class="row mt-4">
+        <!--Menu-->
+        <div class="col-md-3 my-2 mx-3 px-5 bg-white justify-content-start"  id="verticalMenu">
+          <div class="col bg-white my-3">
+            <h2>T<span style="font-weight: bold">S</span></h2>
+          </div>
+          <nav
+            class="col d-flex flex-column bg-white my-2 p-2"
+            style="height: 200px"
+          >
+            <a href="index.html" class="py-2 text-decoration-none"
+              ><span
+                class="iconify icon"
+                data-icon="akar-icons:home"
+                data-width="24"
+              ></span>
+              <h5 class="iconText">Início</h5></a
+            >
+            <a href="#" class="py-2 text-decoration-none"
+              ><span
+                class="iconify icon"
+                data-icon="bi:person-circle"
+                data-width="24"
+              ></span>
+              <h5 class="iconText">Perfil</h5></a
+            >
+            <a href="#" class="py-2 text-decoration-none"
+              ><span
+                class="iconify icon"
+                data-icon="bx:calendar"
+                data-width="23"
+              ></span>
+              <h5 class="iconText">Agenda</h5></a
+            >
+          </nav>
+          <div
+            class="col bg-white d-flex flex-column my-2 p-2"
+            style="height: 300px"
+          >
+            <a href="#" class="py-2 text-decoration-none"
+              ><h5 class="iconText pe-5">Conversas</h5></a
+            >
+            <br>
+            <div>
+              <a href="#" class="text-decoration-none"
+                ><img src="assets/images/charlesSm.jpg" alt="" />
+                <p class="iconText">Charles H.</p>
+            </div>
+            <div class="line"></div>
+            <a href="#" class="text-decoration-none"
+              ><img src="assets/images/alineV.jpg" alt="" />
+              <p class="iconText">Aline V.</p></a
+            >
+            <div class="line"></div>
+            <a href="#" class="text-decoration-none"
+              ><img src="assets/images/neymarJ.jpg" alt="" />
+              <p class="iconText">Neymar Jr.</p></a
+            >
+          </div>
+        </div>
+            <aside class="col radius me-4 box">
+                <div class="row bg-white m-4 radius" style="height: 197px;">
+                        <h1>Sua Agenda</h1>
+                        <div class="col align-items-left" style="padding-top: 80px;">
+                        <img src="assets/images/charles.jpg" style="float:left; padding: 10px;"><p style="font-weight: bold; padding-top:8px;"> Charles Hope <br> UX Researcher * Senior <br> <p id="data" style="color: #FF4500;" > Dia 15 de Fevereiro, 19h</p> </p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        <script type="text/javascript">
+            document.getElementById("data").innerHTML = ("Dia " +localStorage.getItem("data")+ ", " +localStorage.getItem("hora")+ "Hrs");
+        </script>

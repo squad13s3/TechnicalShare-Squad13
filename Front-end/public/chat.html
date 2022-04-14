@@ -9,16 +9,93 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.js"></script>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.11.3.min.js"
+    ></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
 </head>
 <body>
-    <form id="chat">
-        <a href="index.html">aaaaaaaaaaa</a>
-        <div class="messages"></div>
-        <input type="text" name="message" placeholder="Digite sua mensagem">
-        <button type="submit">Enviar</button>
-    </form>
-
+    <!--Menu-->
+    <div class="container-fluid mb-4 mt-4">
+        <div class="row mt-4">
+            <div class="col-md-3 my-2 mx-3 px-5 bg-white justify-content-start"  id="verticalMenu">
+            <div class="col bg-white my-3">
+            <h2>T<span style="font-weight: bold">S</span></h2>
+            </div>
+                <nav
+                class="col d-flex flex-column bg-white my-2 p-2"
+                style="height: 200px"
+                >
+                <a href="index.html" class="py-2 text-decoration-none"
+                ><span
+                class="iconify icon"
+                data-icon="akar-icons:home"
+                data-width="24"
+                ></span>
+                <h5 class="iconText">Início</h5></a>
+                    <a href="#" class="py-2 text-decoration-none"
+                    ><span
+                    class="iconify icon"
+                    data-icon="bi:person-circle"
+                    data-width="24"
+                    ></span>
+                    <h5 class="iconText">Perfil</h5></a>
+                <a href="#" class="py-2 text-decoration-none"
+                    ><span
+                    class="iconify icon"
+                    data-icon="bx:calendar"
+                    data-width="23"
+                    ></span>
+                    <h5 class="iconText">Agenda</h5></a>
+                <div
+                class="col bg-white d-flex flex-column my-2 p-2"
+                style="height: 300px"
+                >
+                <a href="#" class="py-2 text-decoration-none"
+                    ><h5 class="iconText pe-5">Conversas</h5></a
+                >
+                <br>
+                <div>
+                    <a href="#" class="text-decoration-none"
+                    ><img src="assets/images/charlesSm.jpg" alt="" />
+                    <p class="iconText">Charles H.</p>
+                </div>
+                <div class="line"></div>
+                <a href="#" class="text-decoration-none"
+                    ><img src="assets/images/alineV.jpg" alt="" />
+                    <p class="iconText">Aline V.</p></a
+                >
+                <div class="line"></div>
+                <a href="#" class="text-decoration-none"
+                    ><img src="assets/images/neymarJ.jpg" alt="" />
+                    <p class="iconText">Neymar Jr.</p></a
+                >
+                </div>
+                </div>
+                <aside class="col">
+                <div class="row">
+                    <div class="align-items-center">
+                        <img src="assets/images/charlesSm.jpg" style="float:left; padding: 10px;"><p style="font-weight: bold"> Charles Hope <br> UX Researcher * Senior </p>
+                    </div>
+                    <br>
+                    <form id="chat">
+                    <div class="messages"></div>
+                    <input type="text" name="message" placeholder="Digite sua mensagem">
+                    <button type="submit">Enviar</button>
+                    </form>
+                </div>
+             </aside>
+        </div>
+    </div>    
     <script type="text/javascript">
         var socket = io('http://localhost:5500');
 

@@ -54,14 +54,14 @@ localStorage.setItem("data", date);
 localStorage.setItem("hora", hora);
 
 console.log(charlesId);
-console.log
+console.log(userId);
 
 /*const sendGetRequest = async (data) => {
   await axios.post('http://localhost:3333/scheduleMentorship/', data) }
   const data = { "email":`${email}`,"password":`${senha}`};
   sendGetRequest(data);
 */
-location.href = "../mentoriaAgendada.html";
+//location.href = "../mentoriaAgendada.html";
 
 }
 

@@ -133,12 +133,10 @@
                     <option>09:00</option>
                     <option>10:00</option>
                     <option>11:00</option>
-                    <option>12:00</option>
                     <option>14:00</option>
                     <option>15:00</option>
                     <option>16:00</option>
                     <option>17:00</option>
-                    <option>18:00</option>
                   </select>
                 </div>
                 <div class="form">
@@ -175,9 +173,11 @@
       jQuery(function($){ //Função para deixar em pt-br o datepicker.
         $.datepicker.regional['pt-BR'] = {
                 closeText: 'Fechar',
-                prevText: '&#x3c;Anterior',
-                nextText: 'Pr&oacute;ximo&#x3e;',
+                prevText: 'Anterior',
+                nextText: 'Proximo',
                 currentText: 'Hoje',
+                beforeShowDay: $.datepicker.noWeekends,
+                minDate: 0,
                 monthNames: ['Janeiro','Fevereiro','Mar&ccedil;o','Abril','Maio','Junho',
                 'Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
                 monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun',
