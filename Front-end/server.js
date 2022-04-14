@@ -14,6 +14,7 @@ app.use('/', (req, res) => {
     res.render('chat.html');
 })
 
+
 let messages = [];
 
 io.on('connection', socket => {
@@ -28,4 +29,4 @@ io.on('connection', socket => {
     });
 });
 
-server.listen(5500, '127.0.0.1');
+server.listen(5500);
