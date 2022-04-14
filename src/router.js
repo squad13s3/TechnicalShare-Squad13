@@ -1,6 +1,9 @@
 const express = require('express');
 const routes = express.Router();
 
+const userController = require('../controllers/userController');
+
+routes.post('/about/:id', userController.insertAbout)
 
 const loginController = require('../controllers/loginController');
 routes.post('/login', loginController.login);
@@ -8,7 +11,7 @@ routes.post('/login', loginController.login);
 const registerController=  require ("../controllers/registerController")
 routes.post("/register",registerController.register);
 
- 
+
 
 const teachTagcontroller = require("../controllers/teachTagController");
 routes.post("/teachtag/:id", teachTagcontroller.create)
