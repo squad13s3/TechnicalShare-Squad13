@@ -3,7 +3,9 @@ const routes = express.Router();
 
 const userController = require('../controllers/userController');
 
+routes.get('/getabout/:id', userController.getAbout)
 routes.post('/about/:id', userController.insertAbout)
+
 
 const loginController = require('../controllers/loginController');
 routes.post('/login', loginController.login);
@@ -23,5 +25,6 @@ const scheduleMentorship = require("../controllers/ScheduleMentorshipController"
 routes.post("/scheduleMentorship/:userId_teacher/:userId_student",scheduleMentorship.create)
 
 const hastagController = require("../controllers/HastagController");
+const { Router } = require('express');
 routes.post("/search", hastagController.search)
 module.exports = routes;
