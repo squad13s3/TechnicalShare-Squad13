@@ -22,6 +22,6 @@ routes.post("/learntag/:id", learnTagController.create)
 const scheduleMentorship = require("../controllers/ScheduleMentorshipController");
 routes.post("/scheduleMentorship/:userId_teacher/:userId_student",scheduleMentorship.create)
 
-const HastagController = require("../controllers/HastagController");
-routes.get("/search", HastagController.search)
+const hastagController = require("../controllers/HastagController");
+routes.get("/search", hastagController.search)
 module.exports = routes;
