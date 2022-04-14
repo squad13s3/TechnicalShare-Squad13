@@ -115,7 +115,7 @@
                     class="form-control radius meetSelected"
                     id="datepicker"
                     name="date"
-                    placeholder="DD/MM/YYYY"
+                    placeholder="DD-MM-YYYY"
                     type="text"
                     autocomplete="off"
                     required
@@ -143,7 +143,7 @@
                 </div>
                 <div class="form">
                   <button
-                    onclick="onScheduleMeetingClick()"
+                    onclick="teste()"
                     class="btn mentorMeet radius"
                     id="requestMeeting"
                     type="submit"
@@ -162,4 +162,36 @@
   </body>
   <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
+  <script type="text/javascript">
+      var user = JSON.parse(localStorage.getItem("Usuario"))
+
+      function teste(){
+      var date = $('input[name=date]').val();
+      var select = document.getElementById('selectTime');
+      var hora = select.options[select.selectedIndex].text;
+      onScheduleMeetingClick(date, hora, user);
+      }
+
+      jQuery(function($){ //Função para deixar em pt-br o datepicker.
+        $.datepicker.regional['pt-BR'] = {
+                closeText: 'Fechar',
+                prevText: '&#x3c;Anterior',
+                nextText: 'Pr&oacute;ximo&#x3e;',
+                currentText: 'Hoje',
+                monthNames: ['Janeiro','Fevereiro','Mar&ccedil;o','Abril','Maio','Junho',
+                'Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+                monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun',
+                'Jul','Ago','Set','Out','Nov','Dez'],
+                dayNames: ['Domingo','Segunda-feira','Ter&ccedil;a-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sabado'],
+                dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'],
+                dayNamesMin: ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'],
+                weekHeader: 'Sm',
+                dateFormat: 'dd/mm/yy',
+                firstDay: 0,
+                isRTL: false,
+                showMonthAfterYear: false,
+                yearSuffix: ''};
+        $.datepicker.setDefaults($.datepicker.regional['pt-BR']);
+});
+  </script>
 </html>

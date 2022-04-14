@@ -9,7 +9,7 @@ function meetingDate() {
 
 //Função implementada por Guilherme para inicializar o datepicker
 $(function () {
-  $("#datepicker").datepicker({
+  $("#datepicker").datepicker( {
     onSelect: onSelectedDate,
   });
 });
@@ -42,15 +42,29 @@ function onSelectedTime(event) {
   render();
 }
 
-function onScheduleMeetingClick() {
-  window.location.href = "../mentoriaAgendada.html";
+function onScheduleMeetingClick(date, hora, user) {
+console.log(hora);
+console.log(date);
+user = JSON.parse(localStorage.getItem("Usuario"))
+localStorage.setItem("data", date);
+localStorage.setItem("hora", hora);
+/*const sendGetRequest = async (data) => {
+  await axios.post('http://localhost:3333/scheduleMentorship/', data) }
+  const data = { "email":`${email}`,"password":`${senha}`};
+  sendGetRequest(data);
+
+location.href = "../mentoriaAgendada.html";
+*/
 }
 
 function onRequestMeetingClick() {
-  window.location.href = "../solicitarMentoria.html";
+location.href = "../solicitarMentoria.html";
 }
 
-function startSearchButton() {}
+function startSearchButton() {
+
+location.href = "../busca.html";
+}
 
 //testes
 //var data = $("#datepicker").val();

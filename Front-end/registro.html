@@ -69,9 +69,9 @@
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript">
     const sendGetRequest = async (data) => {
-        await axios.post('https://technicalshare.herokuapp.com/register', data)
-        .then(response => localStorage.setItem("nomeUsuario", response.data.name),
-        );
+        await axios.post('https://technicalshare.herokuapp.com/register', data);
+        localStorage.setItem("Usuario", JSON.stringify(data))
+        var user = JSON.parse(localStorage.getItem("Usuario"))
         location.href='index.html';
       }
     
@@ -86,7 +86,7 @@
         console.log(`email: ${email}`);
         console.log(`senha: ${senha}`);
 
-        const data = {"nome":`${nome}`, "email":`${email}`,"password":`${senha}`};
+        const data = {"name":`${nome}`, "email":`${email}`,"password":`${senha}`};
         
         sendGetRequest(data);
       })

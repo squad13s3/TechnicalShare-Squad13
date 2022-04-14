@@ -59,8 +59,10 @@
     <script>
       const sendGetRequest = async (data) => {
         await axios.post('https://technicalshare.herokuapp.com/login', data)
-        .then(response => localStorage.setItem("nomeUsuario", response.data.name),
+        .then(response => localStorage.setItem("Usuario", JSON.stringify(response.data))
         );
+        var user = JSON.parse(localStorage.getItem("Usuario"))
+        
         location.href='index.html';
       }
 

@@ -12,13 +12,14 @@
 </head>
 <body>
     <form id="chat">
+
         <div class="messages"></div>
         <input type="text" name="message" placeholder="Digite sua mensagem">
         <button type="submit">Enviar</button>
     </form>
 
     <script type="text/javascript">
-        var socket = io('http://localhost:5500');
+        var socket = io('http://127.0.0.1:5500/chat/public/chat.html');
 
         function renderMessage(message) {
             $('.messages').append('<div class="message"><strong>'+ message.author +'</strong>:'+ message.message +'</div>');
@@ -34,8 +35,10 @@
         
         $('#chat').submit(function(event){
             event.preventDefault();
+            var user = JSON.parse(localStorage.getItem("Usuario"))
 
-            var author = localStorage.getItem("nomeUsuario");
+            var author = user.name;
+            //var author = $('input[name=username]').val(); 
             var message = $('input[name=message]').val();
 
             if (author.length && message.length){

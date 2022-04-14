@@ -153,7 +153,8 @@
   <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
   <script type="text/javascript">
-    document.getElementById("nome").innerHTML = localStorage.getItem("nomeUsuario");
+    var user = JSON.parse(localStorage.getItem("Usuario"))
+    document.getElementById("nome").innerHTML = (user.name);
   
   </script>
 </html>
