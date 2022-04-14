@@ -1,7 +1,7 @@
 {
-  "name": "chat",
+  "name": "front-end",
   "version": "1.0.0",
-  "description": "",
+  "description": "## 📄Atividades a serem desenvolvidas:",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

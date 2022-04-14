@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechnicalShare</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.11.3.min.js"
+    ></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  </head>
+
+  <!--Quando a página carrega serão pegos dados do servidor-->
+  <body onload="getProfileData()"> 
+    <div class="container-fluid mb-4 mt-4">
+      <div class="row mt-4">
+        <!--Menu-->
+        <div class="col-md-3 my-2 mx-3 px-5 bg-white justify-content-start"  id="verticalMenu">
+          <div class="col bg-white my-3">
+            <h2>T<span style="font-weight: bold">S</span></h2>
+          </div>
+          <nav
+            class="col d-flex flex-column bg-white my-2 p-2"
+            style="height: 200px"
+          >
+            <a href="index.html" class="py-2 text-decoration-none"
+              ><span
+                class="iconify icon"
+                data-icon="akar-icons:home"
+                data-width="24"
+              ></span>
+              <h5 class="iconText">Início</h5></a
+            >
+            <a href="#" class="py-2 text-decoration-none"
+              ><span
+                class="iconify icon"
+                data-icon="bi:person-circle"
+                data-width="24"
+              ></span>
+              <h5 class="iconText">Perfil</h5></a
+            >
+            <a href="#" class="py-2 text-decoration-none"
+              ><span
+                class="iconify icon"
+                data-icon="bx:calendar"
+                data-width="23"
+              ></span>
+              <h5 class="iconText">Agenda</h5></a
+            >
+          </nav>
+          <div
+            class="col bg-white d-flex flex-column my-2 p-2"
+            style="height: 300px"
+          >
+            <a href="#" class="py-2 text-decoration-none"
+              ><h5 class="iconText pe-5">Conversas</h5></a
+            >
+            <br>
+            <div>
+              <a href="#" class="text-decoration-none"
+                ><img src="assets/images/charlesSm.jpg" alt="" />
+                <p class="iconText">Charles H.</p>
+            </div>
+            <div class="line"></div>
+            <a href="#" class="text-decoration-none"
+              ><img src="assets/images/alineV.jpg" alt="" />
+              <p class="iconText">Aline V.</p></a
+            >
+            <div class="line"></div>
+            <a href="#" class="text-decoration-none"
+              ><img src="assets/images/neymarJ.jpg" alt="" />
+              <p class="iconText">Neymar Jr.</p></a
+            >
+          </div>
+        </div>
+
+        <!--Menu Responsivo-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="responsiveMenu">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#" data-bs-toggle="dropdown" >
+              <h2>T<span style="font-weight: bold">S</span></h2>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="index.html"><span
+                class="iconify icon"
+                data-icon="akar-icons:home"
+                data-width="24"
+              ></span> Início</a></li>
+              <li><a class="dropdown-item" href="meuPerfil.html"><span
+                class="iconify icon"
+                data-icon="bi:person-circle"
+                data-width="24"
+              ></span> Perfil</a></li>
+              <li><a class="dropdown-item" href="#"><span
+                class="iconify icon"
+                data-icon="bx:calendar"
+                data-width="23"
+              ></span> Agenda</a></li>
+              <li><a class="dropdown-item" href="#"><span
+                class="iconify icon"
+                data-icon="bx:calendar"
+                data-width="23"
+              ></span> Logout</a></li>
+            </ul>  
+            <a class="nav-link active" aria-current="page" href="#">Conversas</a>
+          </div>
+        </nav>
+
+        <aside class="col radius me-4 box" style="height: 1000px;">
+          <div class="row bg-white m-4 radius" style="height: 197px;">
+            <div class="col d-flex justify-content-start align-self-end">
+                <img src="assets/images/meuPerfil.jpg" class="">
+            </div>
+            <div class="col d-flex justify-content-end align-self-end">
+                <button
+                    class="btn radius btn-outline-secondary editProfileButton mb-2"
+                    id=""
+                    type="button"
+                    data-bs-toggle="modal" data-bs-target="#profileModal"
+                  >
+                    Editar perfil
+                  </button>
+            </div>
+          </div>
+          <div class="d-flex flex-row-reverse bd-highlight m-3">
+            <a href="#" class="p-2 bd-highlight">
+                <span class="iconify" data-icon="ant-design:linkedin-outlined" style="color: #212529;" data-width="32"></span>
+            </a>
+            <a href="#" class="p-2 bd-highlight">
+                <span class="iconify" data-icon="bxl:instagram" style="color: #212529;" data-width="35"></span>
+            </a>
+            <a href="#" class="p-2 bd-highlight">
+                <span class="iconify mt-1" data-icon="bi:medium" style="color: #212529;" data-width="24"></span>
+            </a>
+          </div>
+          <div class="mx-5" id="perfil">
+             <h1 class="fw-bold" id="nome" style="color: #212529;">Você Mesmo</h1>
+             <p class="profileText" style="font-weight: 500;">Product Designer <span class="iconify" data-icon="bi:dot"  data-width="15"></span> Trainee</p>
+             <h6 class="profileText fw-bold mt-5 mb-3" >Sobre</h6>
+             <p class="profileText" id="profileText">
+               <!--gerado dinamicamente-->
+             </p>
+          </div>
+          <div class="bg-white m-4 radius">
+            <div class="row"><h4 class="fw-bold mx-5 my-4">O que você ensina:</h4></div>
+            <div class="row mx-5 mt-2 mb-3">
+                <ul class="list-group list-group-horizontal row" id="tagsTeach">
+                  <!--Serão adicionados dinamicamente-->
+                </ul>
+                <button
+                  class="btn radius btn-outline-secondary addButton mb-2"
+                  id=""
+                  type="button"
+                  data-bs-toggle="modal" data-bs-target="#tagsTeachModal"
+                  >
+                  + Adicionar
+              </button>
+            </div>
+            <div class="row"><h4 class="fw-bold mx-5 my-3">O que você gostaria de aprender:</h4></div>
+            <div class="row mx-5 my-2">
+              <ul class="list-group list-group-horizontal row" id="tagsLearn">
+                <!--Serão adicionados dinamicamente-->
+              </ul>
+              <button
+                  class="btn radius btn-outline-secondary addButton mb-2"
+                  id=""
+                  type="button"
+                  data-bs-toggle="modal" data-bs-target="#tagsLearnModal"
+                  >
+                  + Adicionar
+              </button>
+            </div>  
+        </aside>
+      </div>
+    </div>
+
+
+    <!--Modal para edição do Perfil-->
+    <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content radius">
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold" id="profileModalLabel">Editar Perfil</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <label for="profileFormControlTextarea1" class="form-label">Sobre</label>
+            <textarea class="form-control" id="profileFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary radius" id="closeButton" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn radius" style="background-color: #7373b5;color: white" onclick="onSaveProfile()" data-bs-dismiss="modal">Salvar alterações</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Modal para edição de Tags "O que ensino"-->
+    <div class="modal fade" id="tagsTeachModal" tabindex="-1" aria-labelledby="tagsTeachModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content radius">
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold" id="tagsTeachModalLabel"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <label for="tagsTeachFormControlTextarea1" class="form-label">O que você ensina:</label>
+            <label for="tagsTeachDataList" class="form-label"></label>
+            <input class="form-control" list="datalistOptions" id="tagsTeachDataList" placeholder="Type to search...">
+            <datalist id="datalistOptions">
+              <!--input será gerado pelo servidor-->
+            </datalist>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary radius" id="closeButton" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn radius" style="background-color: #7373b5;color: white" onclick="onSaveTagsTeach()" data-bs-dismiss="modal">Salvar alterações</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Modal para edição de Tags "O que quero aprender"-->
+    <div class="modal fade" id="tagsLearnModal" tabindex="-1" aria-labelledby="tagsLearnModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content radius">
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold" id="tagsLearnModalLabel"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <label for="tagsLearnFormControlTextarea1" class="form-label">O que eu quero aprender:</label>
+            <label for="tagsLearnDataList" class="form-label"></label>
+            <input class="form-control" list="datalistOptions" id="tagsLearnDataList" placeholder="Type to search...">
+            <datalist id="datalistOptions">
+              <!--input será gerado pelo servidor-->
+            </datalist>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary radius" id="closeButton" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn radius" style="background-color: #7373b5;color: white" onclick="onSaveTagsLearn()" data-bs-dismiss="modal">Salvar alterações</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+  <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <script type="text/javascript">
+    var user = JSON.parse(localStorage.getItem("Usuario"))
+    document.getElementById("nome").innerHTML = (user.name);
+  
+  </script>
+</html>

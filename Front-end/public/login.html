@@ -62,7 +62,6 @@
         .then(response => localStorage.setItem("Usuario", JSON.stringify(response.data))
         );
         var user = JSON.parse(localStorage.getItem("Usuario"))
-        
         location.href='index.html';
       }
 
