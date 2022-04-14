@@ -7,6 +7,7 @@ exports.up = function(knex) {
         table.string('name').notNullable();
         table.string('about');
         table.string("email").notNullable();
+        table.string("imgUrl");
         table.string("password").notNullable();
         
       
