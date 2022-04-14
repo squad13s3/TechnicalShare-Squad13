@@ -11,9 +11,6 @@ routes.post("/register",registerController.register);
 const listController =  require ("../controllers/listController")
 routes.get("/list", listController.list);
 
-const { addMessage, getMessages } = require("../controllers/messageController");
-routes.post("/addmsg/", addMessage);
-routes.post("/getmsg/", getMessages);
 
 const teachTagcontroller = require("../controllers/teachTagController");
 routes.post("/teachtag/:id", teachTagcontroller.create)
