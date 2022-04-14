@@ -31,11 +31,27 @@ module.exports = {
     async register (request, response) {
         const {name,email, password} = request.body
         const userId = crypto.randomUUID()
-        await connection('user').insert({userId, name,email,password}) 
-        
-        sendEmail(email)
 
-        return response.json({message: 'Usuário cadastrado.' }); 
+        const testExist = await connection('user')
+        .where('email', email)
+        .select('email')
+        .first();
+        if (!testExist)  {
+            await connection('user').insert({userId, name,email,password}) 
+
+            const {tag_learn1, tag_learn2,tag_learn3} = " "
+            const {tag_teach1, tag_teach2, tag_teach3} = " "
+            const userId_FK = userId
+
+            await connection('learn').insert({tag_learn1, tag_learn2, tag_learn3, userId_FK})
+            await connection('teach').insert({tag_teach1, tag_teach2, tag_teach3, userId_FK})
+
+            return response.json({message: 'Usuario cadastrado'})
+        }else{
+            return response.status(409).json({ message: 'O Email informado já foi cadastro.' })
+
+        }
+      
     } 
 }
 
