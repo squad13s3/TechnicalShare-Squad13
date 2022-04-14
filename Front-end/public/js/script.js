@@ -13,7 +13,7 @@ function meetingDate() {
 
 //Função implementada por Guilherme para inicializar o datepicker
 $(function () {
-  $("#datepicker").datepicker( {
+  $("#datepicker").datepicker({
     onSelect: onSelectedDate,
   });
 });
@@ -47,31 +47,29 @@ function onSelectedTime(event) {
 }
 
 function onScheduleMeetingClick(date, hora, user) {
-user = JSON.parse(localStorage.getItem("Usuario"))
-var charlesId = "346c428d-8513-4938-9e3a-072218ad31cf";
-var userId = user.userId;
-localStorage.setItem("data", date);
-localStorage.setItem("hora", hora);
+  user = JSON.parse(localStorage.getItem("Usuario"));
+  var charlesId = "346c428d-8513-4938-9e3a-072218ad31cf";
+  var userId = user.userId;
+  localStorage.setItem("data", date);
+  localStorage.setItem("hora", hora);
 
-console.log(charlesId);
-console.log(userId);
+  console.log(charlesId);
+  console.log(userId);
 
-/*const sendGetRequest = async (data) => {
+  /*const sendGetRequest = async (data) => {
   await axios.post('http://localhost:3333/scheduleMentorship/', data) }
   const data = { "email":`${email}`,"password":`${senha}`};
   sendGetRequest(data);
 */
-//location.href = "../mentoriaAgendada.html";
-
+  //location.href = "../mentoriaAgendada.html";
 }
 
 function onRequestMeetingClick() {
-location.href = "../solicitarMentoria.html";
+  location.href = "../solicitarMentoria.html";
 }
 
 function startSearchButton() {
-
-location.href = "../busca.html";
+  location.href = "../busca.html";
 }
 
 // ==============================================================================================
@@ -118,7 +116,12 @@ let tagsAll = [
   "jornada do usuário",
 ];
 
-let tagsSelected = [];
+/**
+ * Variável para enviar as tags
+ */
+let tagsSelectedLearn = [];
+let tagsSelectedTeach = [];
+
 const DATALIST_ID = "#datalistOptions";
 const TAGS_TEACH_ID = "tagsTeach";
 const TAGS_LEARN_ID = "tagsLearn";
@@ -139,7 +142,7 @@ function onSaveTagsTeach() {
 
       li.appendChild(textNode);
       li.setAttribute("class", "bg-white tagsTeach");
-      li.setAttribute("onclick", "this.remove()");
+      li.setAttribute("onclick", "removeTagTeach(this); this.remove();");
       ul.appendChild(li);
     }
   }
@@ -149,12 +152,35 @@ function onSaveTagsTeach() {
     ul.innerText = "";
   }
 
+  //Criar as tagsTeach no HTML
   let tagOption = $("#tagsTeachDataList").val();
   createTags(tagOption);
   clearSelection();
+
+  //Salvar as tagsTeach Banco de Dados
+  saveTagOptionTeach(tagOption);
   console.log(tagOption);
 }
 
+//Função para remover as tagsTeach, mas salvando o dado no array
+function removeTagTeach(tagOption) {
+  let htmlValue = tagOption.innerText;
+  let index = tagsSelectedTeach.indexOf(htmlValue);
+  if (index !== -1) {
+    tagsSelectedTeach.splice(index, 1);
+  }
+  console.log(tagsSelectedTeach);
+}
+
+//Função para salvar as tagsTeach
+function saveTagOptionTeach(tagOption) {
+  if (tagsSelectedTeach.length < 3) {
+    tagsSelectedTeach.push(tagOption);
+    console.log(tagsSelectedTeach);
+  }
+}
+
+//Função para criar tagsLearn no HTML e salvar no BD
 function onSaveTagsLearn() {
   /**
    * Método para criar uma tag dinamicamente
@@ -171,7 +197,7 @@ function onSaveTagsLearn() {
 
       li.appendChild(textNode);
       li.setAttribute("class", "bg-white tagsLearn");
-      li.setAttribute("onclick", "this.remove()");
+      li.setAttribute("onclick", "removeTagLearn(this); this.remove();");
       ul.appendChild(li);
     }
   }
@@ -181,12 +207,37 @@ function onSaveTagsLearn() {
     ul.innerText = "";
   }
 
-  let tagOption = $("#tagsLearnDataList").val();
-  createTags(tagOption);
+  //Chamando a função para criar as tagsLearn no HTML
+  let tagOptionLearn = $("#tagsLearnDataList").val();
+  createTags(tagOptionLearn);
   clearSelection();
-  console.log(tagOption);
+
+  //Chamando a função para salvar as tagsLearn no Banco de Dados
+  saveTagOptionLearn(tagOptionLearn);
+  console.log(tagOptionLearn);
+
+  //Função para salvar as tagsLearn
+  function saveTagOptionLearn(tagOption) {
+    if (tagsSelectedLearn.length < 3) {
+      tagsSelectedLearn.push(tagOption);
+      console.log(tagsSelectedLearn);
+    }
+  }
 }
 
+//Função para remover as tagsLearn, mas salvando o dado no array
+function removeTagLearn(tagOption) {
+  let htmlValue = tagOption.innerText;
+  let index = tagsSelectedLearn.indexOf(htmlValue);
+  if (index !== -1) {
+    tagsSelectedLearn.splice(index, 1);
+  }
+  console.log(tagsSelectedLearn);
+}
+
+/**
+ * Funçõa para colocar valores no datalist
+ */
 //https://thewebdev.info/2022/01/09/how-to-add-html-datalist-values-from-array-with-javascript/
 function renderTags() {
   let datalistOptions = document.getElementById("datalistOptions");
@@ -198,10 +249,9 @@ function renderTags() {
 }
 
 /**
- * Método para receber dados da página de Perfil
+ * Método para receber dados da página de Perfil, está sendo chamado na tag body do HTML
  */
 function getProfileData() {
   renderTags();
   renderProfileText();
 }
-

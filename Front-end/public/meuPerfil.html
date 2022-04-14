@@ -81,7 +81,15 @@
               <p class="iconText">Neymar Jr.</p></a
             >
           </div>
+          <div class="col bg-white d-flex flex-column my-2 p-2">
+            <a href="#" class="py-2 text-decoration-none"
+              ><span class="iconify icon" data-icon="tabler:logout"" data-width="25" data-height="25"></span>
+              <h5 class="iconText">Sair</h5></a
+            >
+          </div>
         </div>
+
+
 
         <!--Menu Responsivo-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light" id="responsiveMenu">
@@ -105,11 +113,7 @@
                 data-icon="bx:calendar"
                 data-width="23"
               ></span> Agenda</a></li>
-              <li><a class="dropdown-item" href="#"><span
-                class="iconify icon"
-                data-icon="bx:calendar"
-                data-width="23"
-              ></span> Logout</a></li>
+              <li><a class="dropdown-item" href="#"><span class="iconify icon" data-icon="tabler:logout" data-width="24"></span></span> Sair</a></li>
             </ul>  
             <a class="nav-link active" aria-current="page" href="#">Conversas</a>
           </div>
@@ -257,7 +261,7 @@
   <script type="text/javascript" src="js/script.js"></script>
   <script type="text/javascript">
     var user = JSON.parse(localStorage.getItem("Usuario"))
-    document.getElementById("nome").innerHTML = (user.name);
+    //document.getElementById("nome").innerHTML = (user.name); 
   
   </script>
 </html>
