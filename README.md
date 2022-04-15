@@ -1,4 +1,4 @@
-<img src="Front-end/public/assets/grupo-fcamara-laranja.png"/>
+<img src="Front-end/public/assets/images/grupo-fcamara-laranja.png"/>
 <h1 align="center">Hackaton FCamara - Season 3 - Squad13</h1>
 
 ## 💻 Sobre o Projeto
