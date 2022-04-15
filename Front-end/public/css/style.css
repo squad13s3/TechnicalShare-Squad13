@@ -147,6 +147,11 @@
   display: none;
 }
 
+.teste {
+  min-width: 25%;
+  width: 80%;
+}
+
 /* Responsividade */
 
 @media screen and (max-width: 1200px) {

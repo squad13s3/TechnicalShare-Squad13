@@ -42,14 +42,14 @@
                 data-width="24"
                 ></span>
                 <h5 class="iconText">Início</h5></a>
-                    <a href="#" class="py-2 text-decoration-none"
+                    <a href="meuPerfil.html" class="py-2 text-decoration-none"
                     ><span
                     class="iconify icon"
                     data-icon="bi:person-circle"
                     data-width="24"
                     ></span>
                     <h5 class="iconText">Perfil</h5></a>
-                <a href="#" class="py-2 text-decoration-none"
+                <a href="agenda.html" class="py-2 text-decoration-none"
                     ><span
                     class="iconify icon"
                     data-icon="bx:calendar"
@@ -60,7 +60,7 @@
                 class="col bg-white d-flex flex-column my-2 p-2"
                 style="height: 300px"
                 >
-                <a href="#" class="py-2 text-decoration-none"
+                <a href="chat.html" class="py-2 text-decoration-none"
                     ><h5 class="iconText pe-5">Conversas</h5></a
                 >
                 <br>
@@ -80,23 +80,85 @@
                     <p class="iconText">Neymar Jr.</p></a
                 >
                 </div>
+                <div class="col bg-white d-flex flex-column my-2 p-2">
+                    <a href="login.html" class="py-2 text-decoration-none"
+                      ><span class="iconify icon" data-icon="tabler:logout"" data-width="25" data-height="25"></span>
+                      <h5 class="iconText">Sair</h5></a
+                    >
+                  </div>
                 </div>
-                <aside class="col">
+
+                <!--Menu Responsivo-->
+                <nav class="navbar navbar-expand-lg navbar-light" id="responsiveMenu">
+                    <div class="container-fluid">
+                    <a class="navbar-brand" href="#" data-bs-toggle="dropdown" >
+                        <h2>T<span style="font-weight: bold">S</span></h2>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li>
+                            <a class="dropdown-item" href="index.html"><span
+                            class="iconify icon"
+                            data-icon="akar-icons:home"
+                            data-width="24"
+                            ></span> Início
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="meuPerfil.html"><span
+                            class="iconify icon"
+                            data-icon="bi:person-circle"
+                            data-width="24"
+                            ></span> Perfil
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="agenda.html"><span
+                            class="iconify icon"
+                            data-icon="bx:calendar"
+                            data-width="23"
+                            ></span> Agenda
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="login.html"><span class="iconify icon" data-icon="tabler:logout" data-width="24"></span></span> Sair
+                            </a>
+                        </li>
+                    </ul>  
+                    <a class="nav-link active conversas" aria-current="page" href="chat.html">Conversas</a>
+                    </div>
+                </nav>
+
+
+
+                <aside class="col radius mx-4 box"">
                 <div class="row">
-                    <div class="align-items-center">
-                        <img src="assets/images/charlesSm.jpg" style="float:left; padding: 10px;"><p style="font-weight: bold"> Charles Hope <br> UX Researcher * Senior </p>
+                    <div class="col align-items-center mx-5 my-5">
+                        <img src="assets/images/charlesSm.jpg" style="float:left; padding: 10px;"><p><span class="fw-bold">Charles Hope</span><br> Researcher<span class="iconify" data-icon="bi:dot"  data-width="15"></span>Senior</span></p>
+                    </div>
+                    <div class="col mx-5 my-5">
+                        <button
+                        onclick="onRequestMeetingClick()"
+                        class="btn radius btn-outline-dark editProfileButton mb-2"
+                        id=""
+                        type="button">Solicitar Mentoria
+                        </button>
                     </div>
                     <br>
                     <form id="chat">
-                    <div class="messages"></div>
-                    <input type="text" name="message" placeholder="Digite sua mensagem">
-                    <button type="submit">Enviar</button>
+                    <div class="messages radius teste"></div>
+                    <input class="teste" type="text" name="message" placeholder="Digite sua mensagem">
+                    <button class="teste" type="submit" style="background-color: #7373b5;">Enviar</button>
                     </form>
                 </div>
              </aside>
         </div>
-    </div>    
+    </div>
+    <script type="text/javascript" src="js/bootstrap.bundle.js"></script>    
     <script type="text/javascript">
+        function onRequestMeetingClick() {  
+            location.href = "../solicitarMentoria.html";
+        }
+
         var socket = io('http://localhost:5500');
 
         function renderMessage(message) {

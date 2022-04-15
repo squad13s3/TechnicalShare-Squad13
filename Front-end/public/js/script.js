@@ -55,6 +55,10 @@ function startSearchButton() {
   location.href = "../busca.html";
 }
 
+function onRequestChatButton() {
+  location.href = "../chat.html";
+}
+
 // ==============================================================================================
 //  meuPerfil.html
 // ==============================================================================================
