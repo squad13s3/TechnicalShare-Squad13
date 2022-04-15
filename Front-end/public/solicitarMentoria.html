@@ -17,6 +17,7 @@
       src="https://code.jquery.com/jquery-1.11.3.min.js"
     ></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.js"></script>
   </head>
 
   <body>
@@ -195,13 +196,29 @@
   <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
   <script type="text/javascript">
-      var user = JSON.parse(localStorage.getItem("Usuario"))
+      		function onScheduleMeetingClick(date, hora) {
+            user = JSON.parse(localStorage.getItem("Usuario"));
+            var charlesId = "346c428d-8513-4938-9e3a-072218ad31cf";
+            var userId = user.userId;
+            localStorage.setItem("data", date);
+            localStorage.setItem("hora", hora);
 
+            var combinar = date + " " + hora;
+
+            var dataf = JSON.stringify(combinar);
+            console.log(dataf);
+            const datafinal = { "scheduleMentorship":`${dataf}`};
+            axios.post(
+              "https://technicalshare.herokuapp.com/scheduleMentorship/2e786749-d383-4944-99c9-3ed3aaf32a0b/298c8556-49f8-48a7-9d3d-bc68fd236f55",
+              datafinal
+            );
+            location.href = "../mentoriaAgendada.html";
+          }
+      var user = JSON.parse(localStorage.getItem("Usuario"))
       function teste(){
       var date = $('input[name=date]').val();
       var select = document.getElementById('selectTime');
       var hora = select.options[select.selectedIndex].text;
-
       onScheduleMeetingClick(date, hora);
       }
 

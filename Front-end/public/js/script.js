@@ -1,6 +1,8 @@
 // ==============================================================================================
 //  solicitarMentoria.html
 // ==============================================================================================
+
+
 let hasDate = false;
 let hasTime = false;
 const MEET_SELECTED_CLASS = "meetSelected";
@@ -45,25 +47,6 @@ function onSelectedTime(event) {
   render();
 }
 
-function onScheduleMeetingClick(date, hora) {
-  user = JSON.parse(localStorage.getItem("Usuario"));
-  var charlesId = "346c428d-8513-4938-9e3a-072218ad31cf";
-  var userId = user.userId;
-  localStorage.setItem("data", date);
-  localStorage.setItem("hora", hora);
-
-  var combinar = date + " " + hora;
-
-  var dataf = JSON.stringify(combinar);
-  console.log(dataf);
-  const datafinal = { scheduleMentorship: `${dataf}` };
-  axios.post(
-    "https://technicalshare.herokuapp.com/scheduleMentorship/346c428d-8513-4938-9e3a-072218ad31cf/fe4075b3-0e26-4c09-ae75-fe221a437071",
-    datafinal
-  );
-  location.href = "../mentoriaAgendada.html";
-}
-
 function onRequestMeetingClick() {
   location.href = "../solicitarMentoria.html";
 }
@@ -100,15 +83,14 @@ function salvarText(testeText) {
 }
 
 //TODO: texto será gerado pelo servidor
-let aboutText =
-  "Formado em Design Digital, e pós graduando em UX Research, Operações de Pesquisa e Liderança em Design. Atua como Product Designer trainee - Parte do Grupo FCamara desde 2022";
+let aboutText;
+  //"Formado em Design Digital, e pós graduando em UX Research, Operações de Pesquisa e Liderança em Design. Atua como Product Designer trainee - Parte do Grupo FCamara desde 2022";
 
 function renderProfileText() {
   let aboutTextPTag = document.getElementById("profileText");
   aboutTextPTag.innerText = aboutText;
   localStorage.setItem("Sobre", aboutText);
-  const texto = { about: `${aboutText}` };
-  //axios.post('https://technicalshare.herokuapp.com/about/fe4075b3-0e26-4c09-ae75-fe221a437071', texto);
+  localStorage.setItem("Texto", aboutText);
 }
 
 /////////////////EDITAR TAGS
@@ -124,8 +106,8 @@ let tagsAll = [
 /**
  * Variável para enviar as tags
  */
-let tagsSelectedLearn = ["card sorting", "tree-testing", "customer experience"];
-let tagsSelectedTeach = ["ux research", "entrevista"];
+let tagsSelectedLearn = [];
+let tagsSelectedTeach = [];
 
 const DATALIST_ID = "#datalistOptions";
 const TAGS_TEACH_ID = "tagsTeach";
@@ -181,14 +163,9 @@ function removeTagTeach(tagOption) {
 function saveTagOptionTeach(tagOption) {
   if (tagsSelectedTeach.length < 3) {
     tagsSelectedTeach.push(tagOption);
+    testearray = JSON.stringify(tagsSelectedTeach);
     console.log(tagsSelectedTeach);
-    var tag1T = tagsSelectedTeach[0];
-    var tag2T = tagsSelectedTeach[1];
-    var tag3T = tagsSelectedTeach[2];
   }
-  console.log(tag1T);
-  console.log(tag2T);
-  console.log(tag3T);
 }
 
 //Função para criar tagsLearn no HTML e salvar no BD
@@ -233,11 +210,6 @@ function onSaveTagsLearn() {
       tagsSelectedLearn.push(tagOption);
       console.log(tagsSelectedLearn);
     }
-    var tag1L = tagsSelectedLearn[0];
-    var tag2L = tagsSelectedLearn[1];
-    var tag3L = tagsSelectedLearn[2];
-
-    console.log(tag2L);
   }
 }
 

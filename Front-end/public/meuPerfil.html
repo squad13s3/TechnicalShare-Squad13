@@ -17,6 +17,7 @@
       src="https://code.jquery.com/jquery-1.11.3.min.js"
     ></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.js"></script>
   </head>
 
   <!--Quando a página carrega serão pegos dados do servidor-->
@@ -202,7 +203,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-secondary radius" id="closeButton" data-bs-dismiss="modal">Fechar</button>
-            <button type="button" class="btn radius" style="background-color: #7373b5;color: white" onclick="onSaveProfile()" data-bs-dismiss="modal">Salvar alterações</button>
+            <button type="button" class="btn radius" style="background-color: #7373b5;color: white" onclick="salvarTudo()" data-bs-dismiss="modal">Salvar alterações</button>
           </div>
         </div>
       </div>
@@ -226,7 +227,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-secondary radius" id="closeButton" data-bs-dismiss="modal">Fechar</button>
-            <button type="button" class="btn radius" style="background-color: #7373b5;color: white" onclick="onSaveTagsTeach()" data-bs-dismiss="modal">Salvar alterações</button>
+            <button type="button" class="btn radius" style="background-color: #7373b5;color: white" onclick="salvarTeach()"data-bs-dismiss="modal">Salvar alterações</button>
           </div>
         </div>
       </div>
@@ -250,7 +251,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-secondary radius" id="closeButton" data-bs-dismiss="modal">Fechar</button>
-            <button type="button" class="btn radius" style="background-color: #7373b5;color: white" onclick="onSaveTagsLearn()" data-bs-dismiss="modal">Salvar alterações</button>
+            <button type="button" class="btn radius" style="background-color: #7373b5;color: white" onclick="salvarLearn()" data-bs-dismiss="modal">Salvar alterações</button>
           </div>
         </div>
       </div>
@@ -260,8 +261,45 @@
   <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
   <script type="text/javascript">
-    var user = JSON.parse(localStorage.getItem("Usuario"))
-    document.getElementById("nome").innerHTML = (user.name); 
-  
+      function salvarTudo() {
+        onSaveProfile();
+        var Otexto = localStorage.getItem("Sobre", aboutText);
+        const text = { "about":`${Otexto}`};
+        axios.post('https://technicalshare.herokuapp.com/about/298c8556-49f8-48a7-9d3d-bc68fd236f55', text);
+      }
+
+      var user = JSON.parse(localStorage.getItem("Usuario"))
+      document.getElementById("nome").innerHTML = (user.name);
+        axios.get('https://technicalshare.herokuapp.com/getabout/298c8556-49f8-48a7-9d3d-bc68fd236f55')
+        .then(response => localStorage.setItem("Texto", JSON.stringify(response.data.about))
+        );
+      let testeText;
+      testeText = JSON.parse(localStorage.getItem("Texto"))
+      salvarText(testeText);
+
+      axios.get('https://technicalshare.herokuapp.com/searchteachTag/298c8556-49f8-48a7-9d3d-bc68fd236f55')
+      .then(response => localStorage.setItem("tagsT", JSON.stringify(response.data[0])))
+      var tagsT = JSON.parse(localStorage.getItem("tagsT"))
+      var Ttag1 = tagsT.tag_teach1;
+      var Ttag2 = tagsT.tag_teach2;
+      var Ttag3 = tagsT.tag_teach3;
+      tagsSelectedTeach = [`${Ttag1}`,`${Ttag2}`,`${Ttag3}`];
+
+      axios.get('https://technicalshare.herokuapp.com/searchlearntag/2e786749-d383-4944-99c9-3ed3aaf32a0b')
+      .then(response => localStorage.setItem("tagsL", JSON.stringify(response.data[0])))
+      var tagsL = JSON.parse(localStorage.getItem("tagsL"))
+      var Ltag1 = tagsL.tag_learn1;
+      var Ltag2 = tagsL.tag_learn2;
+      var Ltag3 = tagsL.tag_learn3;
+      tagsSelectedLearn = [`${Ltag1}`,`${Ltag2}`,`${Ltag3}`];
+
+      function salvarLearn(){
+        onSaveTagsLearn()
+      }
+
+      function salvarTeach() {
+        onSaveTagsTeach()
+      }
+
   </script>
 </html>
