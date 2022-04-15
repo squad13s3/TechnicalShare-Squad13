@@ -85,7 +85,7 @@
           <div class="col bg-white d-flex flex-column my-2 p-2">
             <a href="login.html" class="py-2 text-decoration-none"
               ><span class="iconify icon" data-icon="tabler:logout"" data-width="25" data-height="25"></span>
-              <h5 class="iconText">Sair</h5></a
+              <h5 class="iconText" onclick="sair()">Sair</h5></a
             >
           </div>
         </div>
@@ -300,6 +300,10 @@
       function salvarTeach() {
         onSaveTagsTeach()
       }
+      function sair() {
+              localStorage.removeItem("Usuario");
+              localStorage.removeItem("Infos");
+            }
 
   </script>
 </html>
