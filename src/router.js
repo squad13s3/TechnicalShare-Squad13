@@ -2,7 +2,6 @@ const express = require('express');
 const routes = express.Router();
 
 const userController = require('../controllers/userController');
-
 routes.get('/getabout/:id', userController.getAbout)
 routes.post('/about/:id', userController.insertAbout)
 
@@ -25,6 +24,8 @@ const scheduleMentorship = require("../controllers/ScheduleMentorshipController"
 routes.post("/scheduleMentorship/:userId_teacher/:userId_student",scheduleMentorship.create)
 
 const hastagController = require("../controllers/HastagController");
-const { Router } = require('express');
 routes.post("/search", hastagController.search)
+routes.get("/searchteachtag/:id", hastagController.searchTeachTagById)
+
+const { Router } = require('express');
 module.exports = routes;
