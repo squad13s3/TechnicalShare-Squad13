@@ -63,8 +63,8 @@ async function sendEmail(email){
 
           await connection('learn').insert({tag_learn1, tag_learn2, tag_learn3, userId_FK})
           await connection('teach').insert({tag_teach1, tag_teach2, tag_teach3, userId_FK})
-          
-      sendEmail(testExist.email)
+         
+          sendEmail(email)
           return response.json({message: 'Usuario cadastrado'})
       }else{
           return response.status(409).json({ message: 'O Email informado já foi cadastro.' })
