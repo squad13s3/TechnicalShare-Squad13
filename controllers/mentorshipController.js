@@ -17,10 +17,10 @@ const smtpTransport = mailer.createTransport({
       rejectUnauthorized: false,
     },
 });
-async function sendEmail(email){
+async function sendEmail(email,aluno){
   const mailSent = await smtpTransport.sendMail({
-      text: `Obrigado por se cadastrar na plataforma TechnicalShare, esperamos que aproveite todo aprendizado.` , 
-      subject: "Alguem agendou sua mentoria",
+      text:  `${aluno} acredita que pode aprender muito com você, esperamos que possam aprender e compartilhar muito conhecimento.` , 
+      subject: `${aluno} Agendou uma mentoria com você`,
       from: "TechnicalShare contato <squad13s3@gmail.com>",
       to:[email]
   });
@@ -37,9 +37,16 @@ async function sendEmail(email){
         const {scheduleMentorship} = request.body;
         
         console.log(scheduleMentorship)
-        await connection('scheduleMentorship').insert({userId_student,userId_teacher,scheduleMentorship}) 
-        const email = "wolgranjulio@gmail.com" 
-        sendEmail(email)
+        await connection('scheduleMentorship')
+        .insert({userId_student,userId_teacher,scheduleMentorship}) 
+        
+       const email = await connection('user').where('userId',userId_teacher).select('user.email')
+       .first()
+       const aluno = await connection('user').where('userId',userId_student).select('user.name')
+       .first()
+    
+       
+        sendEmail(email.email, aluno.name)
         return response.json({message: 'Mentoria Cadastarda!' }); 
     }
  
