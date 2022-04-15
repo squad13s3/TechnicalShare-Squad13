@@ -69,9 +69,9 @@ const connection = require('../database/conection')
       
       const userId_FK = request.params.id 
    
-      const result = await connection('teach')
+      const result = await connection('learn')
       .where("userId_FK",userId_FK)
-      .select('teach.tag_teach1','teach.tag_teach2','teach.tag_teach3');
+      .select('learn.tag_learn1','learn.tag_learn2','learn.tag_learn3');
      
       
       return response.json(result); 
