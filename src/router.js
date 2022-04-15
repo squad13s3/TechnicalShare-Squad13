@@ -6,11 +6,9 @@ routes.get('/getabout/:id', userController.getAbout)
 routes.post('/about/:id', userController.insertAbout)
 
 
-const loginController = require('../controllers/loginController');
-routes.post('/login', loginController.login);
-
-const registerController=  require ("../controllers/registerController")
-routes.post("/register",registerController.register);
+const authController = require('../controllers/authController');
+routes.post('/login', authController.login);
+routes.post("/register", authController.register);
 
 
 
@@ -23,10 +21,9 @@ routes.post("/learntag/:id", learnTagController.create)
 const scheduleMentorship = require("../controllers/ScheduleMentorshipController");
 routes.post("/scheduleMentorship/:userId_teacher/:userId_student",scheduleMentorship.create)
 
-const hastagController = require("../controllers/HastagController");
-routes.post("/search", hastagController.search)
-routes.get("/searchteachtag/:id", hastagController.searchTeachTagById)
-routes.get("/searchlearntag/:id", hastagController.searchLearnTagById)
+const tagController = require("../controllers/tagController");
+routes.post("/search", tagController.search)
+routes.get("/searchteachtag/:id", tagController.searchTeachTagById)
+routes.get("/searchlearntag/:id", tagController.searchLearnTagById)
 
-const { Router } = require('express');
 module.exports = routes;
