@@ -40,7 +40,7 @@
               ></span>
               <h5 class="iconText">Início</h5></a
             >
-            <a href="#" class="py-2 text-decoration-none"
+            <a href="meuPerfil.html" class="py-2 text-decoration-none"
               ><span
                 class="iconify icon"
                 data-icon="bi:person-circle"
@@ -48,7 +48,7 @@
               ></span>
               <h5 class="iconText">Perfil</h5></a
             >
-            <a href="#" class="py-2 text-decoration-none"
+            <a href="agenda.html" class="py-2 text-decoration-none"
               ><span
                 class="iconify icon"
                 data-icon="bx:calendar"
@@ -61,7 +61,7 @@
             class="col bg-white d-flex flex-column my-2 p-2"
             style="height: 300px"
           >
-            <a href="#" class="py-2 text-decoration-none"
+            <a href="chat.html" class="py-2 text-decoration-none"
               ><h5 class="iconText pe-5">Conversas</h5></a
             >
             <br>
@@ -82,7 +82,7 @@
             >
           </div>
           <div class="col bg-white d-flex flex-column my-2 p-2">
-            <a href="#" class="py-2 text-decoration-none"
+            <a href="login.html" class="py-2 text-decoration-none"
               ><span class="iconify icon" data-icon="tabler:logout"" data-width="25" data-height="25"></span>
               <h5 class="iconText">Sair</h5></a
             >
@@ -92,7 +92,7 @@
 
 
         <!--Menu Responsivo-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="responsiveMenu">
+        <nav class="navbar navbar-expand-lg navbar-light" id="responsiveMenu">
           <div class="container-fluid">
             <a class="navbar-brand" href="#" data-bs-toggle="dropdown" >
               <h2>T<span style="font-weight: bold">S</span></h2>
@@ -108,18 +108,18 @@
                 data-icon="bi:person-circle"
                 data-width="24"
               ></span> Perfil</a></li>
-              <li><a class="dropdown-item" href="#"><span
+              <li><a class="dropdown-item" href="agenda.html"><span
                 class="iconify icon"
                 data-icon="bx:calendar"
                 data-width="23"
               ></span> Agenda</a></li>
-              <li><a class="dropdown-item" href="#"><span class="iconify icon" data-icon="tabler:logout" data-width="24"></span></span> Sair</a></li>
+              <li><a class="dropdown-item" href="login.html"><span class="iconify icon" data-icon="tabler:logout" data-width="24"></span></span> Sair</a></li>
             </ul>  
-            <a class="nav-link active" aria-current="page" href="#">Conversas</a>
+            <a class="nav-link active conversas" aria-current="page" href="chat.html">Conversas</a>
           </div>
         </nav>
 
-        <aside class="col radius me-4 box" style="height: 1000px;">
+        <aside class="col radius me-4 box">
           <div class="row bg-white m-4 radius" style="height: 197px;">
             <div class="col d-flex justify-content-start align-self-end">
                 <img src="assets/images/meuPerfil.jpg" class="">
@@ -155,7 +155,7 @@
              </p>
           </div>
           <div class="bg-white m-4 radius">
-            <div class="row"><h4 class="fw-bold mx-5 my-4">O que você ensina:</h4></div>
+            <div class="row  mx-5 my-4"><h4 class="fw-bold mt-3">O que você ensina:</h4></div>
             <div class="row mx-5 mt-2 mb-3">
                 <ul class="list-group list-group-horizontal row" id="tagsTeach">
                   <!--Serão adicionados dinamicamente-->
@@ -169,13 +169,13 @@
                   + Adicionar
               </button>
             </div>
-            <div class="row"><h4 class="fw-bold mx-5 my-3">O que você gostaria de aprender:</h4></div>
+            <div class="row  mx-5 my-3"><h4 class="fw-bold">O que você gostaria de aprender:</h4></div>
             <div class="row mx-5 my-2">
               <ul class="list-group list-group-horizontal row" id="tagsLearn">
                 <!--Serão adicionados dinamicamente-->
               </ul>
               <button
-                  class="btn radius btn-outline-secondary addButton mb-2"
+                  class="btn radius btn-outline-secondary addButton mb-3"
                   id=""
                   type="button"
                   data-bs-toggle="modal" data-bs-target="#tagsLearnModal"
@@ -261,12 +261,7 @@
   <script type="text/javascript" src="js/script.js"></script>
   <script type="text/javascript">
     var user = JSON.parse(localStorage.getItem("Usuario"))
-    document.getElementById("nome").innerHTML = (user.name);
-        /*axios.get('https://technicalshare.herokuapp.com/getabout/fe4075b3-0e26-4c09-ae75-fe221a437071', texto)
-        .then(response => localStorage.setItem("Texto", JSON.stringify(response.texto))
-    )
-    let testeText;
-    testeText = JSON.parse(localStorage.getItem("Texto"))
-    salvarText(testeText);*/
+    document.getElementById("nome").innerHTML = (user.name); 
+  
   </script>
 </html>

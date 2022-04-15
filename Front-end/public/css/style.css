@@ -40,6 +40,7 @@
   background-color: #f9f9f9;
   max-width: 964px;
   height: 933px;
+  margin: 0px 48px 0px 48px;
 }
 .line {
   border: 1px solid #f9f9f9;
@@ -115,13 +116,13 @@
 
 .tagsLearn {
   width: auto;
-  height: 43px;
+  height: auto;
   border: 2px solid;
   border-radius: 30px 0px 30px 30px;
   border-color: #7373b5;
   color: #7373b5;
   text-align: center;
-  padding-top: 5px;
+  padding: 5px;
   list-style: none;
   cursor: pointer;
   margin: 0px 10px 10px 10px;
@@ -129,7 +130,7 @@
 
 .tagsTeach {
   width: auto;
-  height: 43px;
+  height: auto;
   border: 2px solid;
   border-radius: 30px 0px 30px 30px;
   border-color: orangered;
@@ -159,6 +160,13 @@
   .carousel .carousel-indicators button {
     display: none;
   }
+
+  .box {
+    background-color: #f9f9f9;
+    width: auto;
+    height: auto;
+    margin: 10px;
+  }
 }
 
 @media screen and (max-width: 769px) {
@@ -168,6 +176,25 @@
 
   #responsiveMenu {
     display: block;
+  }
+
+  .conversas {
+    color: #535353;
+    font-weight: 400;
+  }
+
+  .conversas:hover {
+    color: black;
+    font-weight: bold;
+  }
+
+  .editProfileButton {
+    height: auto;
+    min-width: 50%;
+  }
+
+  .imgResponsive {
+    width: 100%;
   }
 }
 

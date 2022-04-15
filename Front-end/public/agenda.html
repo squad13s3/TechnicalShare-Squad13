@@ -20,7 +20,7 @@
   </head>
 
   <!--Quando a página carrega serão pegos dados do servidor-->
-  <body onload="getProfileData()"> 
+  <body> 
     <div class="container-fluid mb-4 mt-4">
       <div class="row mt-4">
         <!--Menu-->
@@ -40,7 +40,7 @@
               ></span>
               <h5 class="iconText">Início</h5></a
             >
-            <a href="#" class="py-2 text-decoration-none"
+            <a href="meuPerfil.html" class="py-2 text-decoration-none"
               ><span
                 class="iconify icon"
                 data-icon="bi:person-circle"
@@ -48,7 +48,7 @@
               ></span>
               <h5 class="iconText">Perfil</h5></a
             >
-            <a href="#" class="py-2 text-decoration-none"
+            <a href="agenda.html" class="py-2 text-decoration-none"
               ><span
                 class="iconify icon"
                 data-icon="bx:calendar"
@@ -61,7 +61,7 @@
             class="col bg-white d-flex flex-column my-2 p-2"
             style="height: 300px"
           >
-            <a href="#" class="py-2 text-decoration-none"
+            <a href="chat.html" class="py-2 text-decoration-none"
               ><h5 class="iconText pe-5">Conversas</h5></a
             >
             <br>
@@ -81,16 +81,52 @@
               <p class="iconText">Neymar Jr.</p></a
             >
           </div>
+          <div class="col bg-white d-flex flex-column my-2 p-2">
+            <a href="login.html" class="py-2 text-decoration-none"
+              ><span class="iconify icon" data-icon="tabler:logout"" data-width="25" data-height="25"></span>
+              <h5 class="iconText">Sair</h5></a
+            >
+          </div>
         </div>
-            <aside class="col radius me-4 box">
-                <div class="row bg-white m-4 radius" style="height: 197px;">
-                        <h1>Sua Agenda</h1>
-                        <div class="col align-items-left" style="padding-top: 80px;">
-                        <img src="assets/images/charles.jpg" style="float:left; padding: 10px;"><p style="font-weight: bold; padding-top:8px;"> Charles Hope <br> UX Researcher * Senior <br> <p id="data" style="color: #FF4500;" > Dia 15 de Fevereiro, 19h</p> </p>
-                        </div>
-                    </div>
-                </div>
-            </aside>
+
+        <!--Menu Responsivo-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="responsiveMenu">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#" data-bs-toggle="dropdown" >
+              <h2>T<span style="font-weight: bold">S</span></h2>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="index.html"><span
+                class="iconify icon"
+                data-icon="akar-icons:home"
+                data-width="24"
+              ></span> Início</a></li>
+              <li><a class="dropdown-item" href="meuPerfil.html"><span
+                class="iconify icon"
+                data-icon="bi:person-circle"
+                data-width="24"
+              ></span> Perfil</a></li>
+              <li><a class="dropdown-item" href="agenda.html"><span
+                class="iconify icon"
+                data-icon="bx:calendar"
+                data-width="23"
+              ></span> Agenda</a></li>
+              <li><a class="dropdown-item" href="login.html"><span class="iconify icon" data-icon="tabler:logout" data-width="24"></span></span> Sair</a></li>
+            </ul>  
+            <a class="nav-link active conversas" aria-current="page" href="chat.html">Conversas</a>
+          </div>
+        </nav>
+
+        <aside class="col radius me-4 box">
+          <h1 class="my-5 px-3 mx-5">Sua Agenda</h1>
+          <div class="row bg-white m-4 radius" style="height: 197px;">
+            <div class="col align-self-center">
+              <img src="assets/images/charles.jpg" style="float:left; padding: 10px;"><p style="font-weight: bold; padding-top:8px;"> Charles Hope <br> UX Researcher * Senior <br> <p id="data" style="color: #FF4500;" > Dia 15 de Fevereiro, 19h</p> </p>
+            </div>
+          </div>
+        </aside>
+
+        <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
         <script type="text/javascript">
             document.getElementById("data").innerHTML = ("Dia " +localStorage.getItem("data")+ ", " +localStorage.getItem("hora")+ "Hrs");
         </script>

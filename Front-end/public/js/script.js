@@ -62,7 +62,7 @@ function onScheduleMeetingClick(date, hora) {
 }
 
 function onRequestMeetingClick() {
-  location.href = "../solicitarMentoria.html";
+  location.href = "../mentoriaAgendada.html";
 }
 
 function startSearchButton() {

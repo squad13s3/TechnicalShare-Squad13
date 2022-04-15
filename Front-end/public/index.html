@@ -20,7 +20,7 @@
     <div class="container-fluid mb-4 mt-4">
       <div class="row mt-4">
         <!--Menu-->
-        <div class="col-3 my-2 mx-3 px-5 bg-white justify-content-start">
+        <div class="col-3 my-2 mx-3 px-5 bg-white justify-content-start" id="verticalMenu">
           <div class="col bg-white my-3">
             <h2>T<span style="font-weight: bold">S</span></h2>
           </div>
@@ -28,7 +28,7 @@
             class="col d-flex flex-column bg-white my-2 p-2"
             style="height: 200px"
           >
-            <a href="#" class="py-2 text-decoration-none"
+            <a href="index.html" class="py-2 text-decoration-none"
               ><span
                 class="iconify icon"
                 data-icon="akar-icons:home"
@@ -77,10 +77,43 @@
               <p class="iconText">Neymar Jr.</p></a
             >
           </div>
-          <a href="login.html">LOGOUT</a>
+          <div class="col bg-white d-flex flex-column my-2 p-2">
+            <a href="login.html" class="py-2 text-decoration-none"
+              ><span class="iconify icon" data-icon="tabler:logout"" data-width="25" data-height="25"></span>
+              <h5 class="iconText">Sair</h5></a
+            >
+          </div>
         </div>
 
-        <aside class="col radius mx-5 box">
+        <!--Menu Responsivo-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="responsiveMenu">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#" data-bs-toggle="dropdown" >
+              <h2>T<span style="font-weight: bold">S</span></h2>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="index.html"><span
+                class="iconify icon"
+                data-icon="akar-icons:home"
+                data-width="24"
+              ></span> Início</a></li>
+              <li><a class="dropdown-item" href="meuPerfil.html"><span
+                class="iconify icon"
+                data-icon="bi:person-circle"
+                data-width="24"
+              ></span> Perfil</a></li>
+              <li><a class="dropdown-item" href="agenda.html"><span
+                class="iconify icon"
+                data-icon="bx:calendar"
+                data-width="23"
+              ></span> Agenda</a></li>
+              <li><a class="dropdown-item" href="login.html"><span class="iconify icon" data-icon="tabler:logout" data-width="24"></span></span> Sair</a></li>
+            </ul>  
+            <a class="nav-link active conversas" aria-current="page" href="chat.html">Conversas</a>
+          </div>
+        </nav>
+
+        <aside class="col radius box">
           <div class="row my-3 py-3 d-flex flex-column align-items-center">
               <input
                 type="text"
@@ -105,7 +138,6 @@
           <div
             id="carouselExampleIndicators"
             class="carousel slide my-3 py-3 text-center"
-            style="height: 230px"
             data-bs-ride="carousel"
           >
             <div class="carousel-indicators">
@@ -155,12 +187,12 @@
             </div>
           </div>
 
-          <div class="row m-4 pb-3 pt-5 px-5 bg-light">
+          <div class="row m-4 py-3 px-5 bg-light">
             <h2 style="font-weight: bold">Mentores Recomendados</h2>
             <p class="text">Com base no seu interesse em UX Design</p>
           </div>
           <div class="row mx-5 bg-light">
-            <div class="col-md bg-white mx-2 radius py-4">
+            <div class="col-md bg-white mx-2 mb-2 radius py-4">
               <img
                 src="assets/images/charles.jpg"
                 class="ps-5 py-4"
@@ -183,7 +215,7 @@
                 ></span
               ></a>
             </div>
-            <div class="col-md bg-white mx-2 radius py-4">
+            <div class="col-md bg-white mx-2 mb-2 radius py-4">
               <img
                 src="assets/images/amanda.jpg"
                 class="ps-5 py-4"
@@ -206,7 +238,7 @@
                 ></span
               ></a>
             </div>
-            <div class="col-md bg-white mx-2 radius py-4">
+            <div class="col-md bg-white mx-2 mb-2 radius py-4">
               <img
                 src="assets/images/fernanda.jpg"
                 class="ps-5 py-4"
