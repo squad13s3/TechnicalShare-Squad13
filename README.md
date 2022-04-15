@@ -41,6 +41,23 @@ Clone o repositório e execute os comandos abaixo:
   # Entre no diretório e execute
   > npm install
   > npm run dev
+  
+  Front-end
+  # Entre na pasta front-end
+  > npm install
+  > node server.js
+  > entre no http://localhost:5500/login.html
+
+  Usuarios que estão cadastrados no momento
+  
+  Aluno:
+  Email:emailteste@gmail.com
+  Senha: g123
+  
+  Mentor: 
+  Enail: CharlesHopeTeste@gmail.com
+  Senha: c123
+  
 ```
 
 ---
@@ -71,8 +88,8 @@ Obrigado pela oportunidade e agradeço a todos da minha equipe que fizeram tudo 
 [![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/GuilhermeJerolamo) [![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/guilherme-jerolamo-473b32185/)
 
 <h3>Icaro Lucas - UI/UX</h3>
-<p align="justify">Sendo um desenvolvedor que está em busca de migrar para a área de UX, só tive oportunidades de trabalhar com alguns freelas e sempre de forma individual. Então, ter entrado no programa de formação e ter contato com uma equipe e um fluxo de projeto profissional ao lado de desenvolvedores me inspirou a continuar estudando e me capacitando dentro do UX, uma área onde é claro o quanto o esforço colaborativo é altamente recompensador para um projeto.
-Agradeço imensamente a FCamara por ter me proporcionado a oportunidade de trabalhar ao lado do meu squad e contribuir com um projeto extremamente enriquecedor, e que agora independente do resultado me sinto um profissional melhor. ❤️</p>
+<p align="justify">Sendo um desenvolvedor que está em busca de migrar para a área  só tive oportunidades de trabalhar com UI/UX em alguns freelas e sempre de forma individual. Então, ter entrado no programa de formação e ter contato com uma equipe e um fluxo de projeto profissional ao lado de desenvolvedores me inspirou a continuar estudando e me capacitando dentro do UX, uma área onde é claro o quanto o esforço colaborativo é altamente recompensador para um projeto.
+Agradeço imensamente a FCamara por ter me proporcionado a oportunidade de trabalhar ao lado do meu squad e contribuir com um projeto extremamente enriquecedor, e que agora independente do resultado me sinto um profissional melhor. ❤️ ❤️</p>
 
 [![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/icaro-lucas-290859228/)
 
