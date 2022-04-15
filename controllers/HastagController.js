@@ -26,5 +26,17 @@ const connection = require('../database/conection')
      
       
       return response.json(result); 
-  }
+    },
+    async searchLearnTagById(request, response) { 
+      
+      
+      const userId_FK = request.params.id 
+   
+      const result = await connection('teach')
+      .where("userId_FK",userId_FK)
+      .select('teach.tag_teach1','teach.tag_teach2','teach.tag_teach3');
+     
+      
+      return response.json(result); 
+    }
     }

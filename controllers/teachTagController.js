@@ -8,13 +8,15 @@ const connection = require('../database/conection')
         const {tag_teach1, tag_teach2,tag_teach3} = request.body;
         
 
-          await connection('teach').where('userId_FK', userId_FK)
+        const teachtag = await connection('teach').where('userId_FK', userId_FK)
           .update({
             'tag_teach1': tag_teach1, 
             'tag_teach2': tag_teach2, 
             'tag_teach3': tag_teach3, 
-          })
-        
+          }).select('userId_FK')
+          if (!teachtag) {
+            return response.status(400).json({ message: 'Falha ao efetuar update, cheque suas informaçoes' });
+          }
         return response.json({message: 'tag cadastrada.' }); 
     }
  
