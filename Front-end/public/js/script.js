@@ -52,17 +52,20 @@ function onScheduleMeetingClick(date, hora) {
   localStorage.setItem("data", date);
   localStorage.setItem("hora", hora);
 
-  var combinar = date + ' ' + hora;
+  var combinar = date + " " + hora;
 
   var dataf = JSON.stringify(combinar);
   console.log(dataf);
-  const datafinal = {"scheduleMentorship":`${dataf}`};
-  //axios.post('https://technicalshare.herokuapp.com/scheduleMentorship/346c428d-8513-4938-9e3a-072218ad31cf/fe4075b3-0e26-4c09-ae75-fe221a437071', datafinal);
+  const datafinal = { scheduleMentorship: `${dataf}` };
+  axios.post(
+    "https://technicalshare.herokuapp.com/scheduleMentorship/346c428d-8513-4938-9e3a-072218ad31cf/fe4075b3-0e26-4c09-ae75-fe221a437071",
+    datafinal
+  );
   location.href = "../mentoriaAgendada.html";
 }
 
 function onRequestMeetingClick() {
-  location.href = "../mentoriaAgendada.html";
+  location.href = "../solicitarMentoria.html";
 }
 
 function startSearchButton() {
@@ -91,21 +94,20 @@ function onSaveProfile() {
   ).value;
   aboutText = profileText;
   renderProfileText();
-
-  }
-function salvarText(testeText) {  
+}
+function salvarText(testeText) {
   aboutText = testeText;
 }
 
 //TODO: texto será gerado pelo servidor
-  let aboutText = 
+let aboutText =
   "Formado em Design Digital, e pós graduando em UX Research, Operações de Pesquisa e Liderança em Design. Atua como Product Designer trainee - Parte do Grupo FCamara desde 2022";
-  
+
 function renderProfileText() {
   let aboutTextPTag = document.getElementById("profileText");
   aboutTextPTag.innerText = aboutText;
   localStorage.setItem("Sobre", aboutText);
-  const texto = {"about":`${aboutText}`};
+  const texto = { about: `${aboutText}` };
   //axios.post('https://technicalshare.herokuapp.com/about/fe4075b3-0e26-4c09-ae75-fe221a437071', texto);
 }
 
@@ -122,8 +124,8 @@ let tagsAll = [
 /**
  * Variável para enviar as tags
  */
-let tagsSelectedLearn = [];
-let tagsSelectedTeach = [];
+let tagsSelectedLearn = ["card sorting", "tree-testing", "customer experience"];
+let tagsSelectedTeach = ["ux research", "entrevista"];
 
 const DATALIST_ID = "#datalistOptions";
 const TAGS_TEACH_ID = "tagsTeach";
@@ -163,7 +165,6 @@ function onSaveTagsTeach() {
   //Salvar as tagsTeach Banco de Dados
   saveTagOptionTeach(tagOption);
   console.log(tagOption);
-
 }
 
 //Função para remover as tagsTeach, mas salvando o dado no array
@@ -189,8 +190,6 @@ function saveTagOptionTeach(tagOption) {
   console.log(tag2T);
   console.log(tag3T);
 }
-
-
 
 //Função para criar tagsLearn no HTML e salvar no BD
 function onSaveTagsLearn() {
@@ -265,10 +264,44 @@ function renderTags() {
   }
 }
 
+//Função para renderizar as tagsTeach já selecionadas pelo usuário (e que estõ no DB) na tela
+function renderTagsSelectedTeach() {
+  if (tagsSelectedTeach != "") {
+    let ul = document.getElementById(TAGS_TEACH_ID);
+    //let ul = document.createElement("ul");
+    tagsSelectedTeach.forEach((element) => {
+      let li = document.createElement("li");
+      let textNode = document.createTextNode(element);
+      li.appendChild(textNode);
+      li.setAttribute("class", "bg-white tagsTeach");
+      li.setAttribute("onclick", "removeTagTeach(this); this.remove();");
+      ul.appendChild(li);
+    });
+  }
+}
+
+//Função para renderizar as tagsLearn já selecionadas pelo usuário (e que estõ no DB) na tela
+function renderTagsSelectedLearn() {
+  if (tagsSelectedLearn != "") {
+    let ul = document.getElementById(TAGS_LEARN_ID);
+    //let ul = document.createElement("ul");
+    tagsSelectedLearn.forEach((element) => {
+      let li = document.createElement("li");
+      let textNode = document.createTextNode(element);
+      li.appendChild(textNode);
+      li.setAttribute("class", "bg-white tagsLearn");
+      li.setAttribute("onclick", "removeTagLearn(this); this.remove();");
+      ul.appendChild(li);
+    });
+  }
+}
+
 /**
  * Método para receber dados da página de Perfil, está sendo chamado na tag body do HTML
  */
 function getProfileData() {
   renderTags();
   renderProfileText();
+  renderTagsSelectedTeach();
+  renderTagsSelectedLearn();
 }
