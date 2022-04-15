@@ -108,7 +108,9 @@ Estou muito orgulhosa do trabalho que desenvolvemos em conjunto. Vejo esse proje
 [![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/tamireshendres/)
 
 <h3>Wolgran Julio - DEV</h3>
-<p align="justify"></p>
+<p align="justify">
+Eu quero agradecer a Fcamara pela oportunidade que ficará marcada na minha vida, foram 15 dias muito intensos, tantas coisas aconteceram em tão pouco tempo, tantos desafios e dificuldades superadas, tanto individualmente quanto coletivamente, eu aprendi muito com o trabalho em equipe, eu gostaria de ressaltar o empenho e o esforço da minha colega de equipe Diana, mesmo estudando e trabalhando ela não faltou um dia sequer da nossa reunião do back, e eu pude sentir a progressão, o interesse e o aprendizado a cada dia que estudavamos juntos e "codavamos", mas acima de tudo trabalhar com ela me fez sentir o sentimento de "estar em casa" e eu acho que isso fez toda diferença e tornou até os nossos momentos de dificuldade em momentos que estavamos nos divertindo, e eu levo comigo cada um dos amigos que fiz nesse hackaton e essa experiência maravilhosa no qual ja estou recompensado.
+</p>
 
 [![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/wjulio7) [![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/wolgran/)
 
