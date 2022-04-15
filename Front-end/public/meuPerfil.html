@@ -261,7 +261,12 @@
   <script type="text/javascript" src="js/script.js"></script>
   <script type="text/javascript">
     var user = JSON.parse(localStorage.getItem("Usuario"))
-    //document.getElementById("nome").innerHTML = (user.name); 
-  
+    document.getElementById("nome").innerHTML = (user.name);
+        /*axios.get('https://technicalshare.herokuapp.com/getabout/fe4075b3-0e26-4c09-ae75-fe221a437071', texto)
+        .then(response => localStorage.setItem("Texto", JSON.stringify(response.texto))
+    )
+    let testeText;
+    testeText = JSON.parse(localStorage.getItem("Texto"))
+    salvarText(testeText);*/
   </script>
 </html>

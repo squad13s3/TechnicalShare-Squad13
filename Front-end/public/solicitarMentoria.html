@@ -167,7 +167,8 @@
       var date = $('input[name=date]').val();
       var select = document.getElementById('selectTime');
       var hora = select.options[select.selectedIndex].text;
-      onScheduleMeetingClick(date, hora, user);
+
+      onScheduleMeetingClick(date, hora);
       }
 
       jQuery(function($){ //Função para deixar em pt-br o datepicker.
